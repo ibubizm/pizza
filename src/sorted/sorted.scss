@@ -1,0 +1,30 @@
+.catigories {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.catigories__btn {
+  display: flex;
+  list-style: none;
+}
+
+.btn {
+  &--cat {
+    background-color: rgb(231, 227, 227);
+    margin-right: 5px;
+    color: black;
+
+    &:hover {
+      top: -10px;
+      //   background-color: darken(rgb(231, 227, 227), 10%);
+      //   color: #fff;
+      //   cursor: pointer;
+    }
+  }
+}
+
+.active {
+  background-color: rgb(255, 127, 22);
+  color: #fff;
+}

@@ -1,0 +1,53 @@
+.title {
+  margin-bottom: 30px;
+  font-family: 'Crete Round', serif;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 20%;
+  font-family: 'Balsamiq Sans', cursive;
+  margin: 15px;
+}
+
+.item__name {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Balsamiq Sans', cursive;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.switcher {
+  display: block;
+  justify-content: space-between;
+  border-radius: 7px;
+  background-color: rgb(231, 227, 227);
+  margin-bottom: 10px;
+}
+
+.dough,
+.sm__block {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  input {
+    display: none;
+  }
+}
+
+.switch__dough,
+.sm {
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  &:active {
+    background-color: darken(#fff, 50%);
+    border-radius: 7px;
+  }
+}
