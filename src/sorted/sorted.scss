@@ -1,9 +1,13 @@
+.ass {
+  display: flex;
+  justify-content: space-between;
+}
+
 .catigories {
   display: flex;
   margin-top: 50px;
   justify-content: space-between;
 }
-
 .catigories__btn {
   display: flex;
   list-style: none;
@@ -27,4 +31,27 @@
 .active {
   background-color: rgb(255, 127, 22);
   color: #fff;
+}
+
+.sortpopop {
+  ul {
+    width: 200px;
+    border-radius: 7px;
+    text-align: center;
+    padding-inline-start: 0;
+    background-color: #ccc;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 30px;
+    }
+
+    li:hover {
+      cursor: pointer;
+      color: #fff;
+      background: rgb(255, 127, 22);
+    }
+  }
 }
