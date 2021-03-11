@@ -5,17 +5,26 @@ import meat from './img/meat.jpg'
 const pizza = {
     all: [
         {img: peperoni,
-        name: 'peperoni'},
-        {img: season,
-        name: '4 seasons'},
-        {img: meat,
-        name: 'meat'},
-        {img: peperoni,
+            id: 0,
+            catigory: 0,
+            types: ['slim', 'fat'],
+            size: [30, 40, 50],
             name: 'peperoni'},
-            {img: season,
+
+        {img: season,
+            id: 1,
+            catigory: 1,
+            types: ['slim', 'fat'],
+            size: [30, 40, 55],
             name: '4 seasons'},
-            {img: meat,
-            name: 'meat'}
+
+        {img: meat,
+            id: 2,
+            catigory: 0,
+            types: ['slim', 'fat'],
+            size: [30, 40, 50],
+            name: 'meat'},
+        
         ]
 }
 

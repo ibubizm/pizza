@@ -1,12 +1,15 @@
-.ass {
+.sorting {
   display: flex;
+  width: 1200px;
+  margin: 0 auto;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .catigories {
   display: flex;
-  margin-top: 50px;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 .catigories__btn {
   display: flex;
@@ -19,39 +22,46 @@
     margin-right: 5px;
     color: black;
 
-    &:hover {
-      top: -10px;
-      //   background-color: darken(rgb(231, 227, 227), 10%);
-      //   color: #fff;
-      //   cursor: pointer;
-    }
+    // &:hover {
+    //   top: -10px;
+    //   cursor: pointer;
+    // }
+  }
+}
+
+.sort {
+  display: flex;
+  p {
+    margin: 0;
+  }
+
+  span {
+    text-decoration: underline;
   }
 }
 
 .active {
   background-color: rgb(255, 127, 22);
-  color: #fff;
+  color: #ffffff;
 }
 
-.sortpopop {
+.sort__popop {
   ul {
-    width: 200px;
+    position: absolute;
+    margin-top: 20px;
+    right: 50px;
+    list-style: none;
     border-radius: 7px;
     text-align: center;
     padding-inline-start: 0;
-    background-color: #ccc;
-    list-style: none;
-
+    border: 1px solid black;
     li {
-      display: flex;
-      align-items: center;
-      height: 30px;
-    }
+      padding: 10px 30px;
 
-    li:hover {
-      cursor: pointer;
-      color: #fff;
-      background: rgb(255, 127, 22);
+      &:hover {
+        // background-color: darken(10%);
+        cursor: pointer;
+      }
     }
   }
 }

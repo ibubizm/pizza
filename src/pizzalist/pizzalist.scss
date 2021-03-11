@@ -34,6 +34,7 @@
 .dough,
 .sm__block {
   display: flex;
+  text-align: center;
   padding: 10px;
   justify-content: space-between;
   input {
@@ -46,8 +47,11 @@
   width: 50%;
   text-align: center;
   padding: 5px;
-  &:active {
-    background-color: darken(#fff, 50%);
-    border-radius: 7px;
-  }
+}
+
+.actives {
+  width: 100%;
+  height: 100%;
+  background-color: darken(#fff, 50%);
+  border-radius: 7px;
 }

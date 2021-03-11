@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import './sorted.scss'
 
 
@@ -6,10 +6,8 @@ import './sorted.scss'
 function Sorted(props){
     const [state, setState] = useState(null)
 
-
     return(
-        <div className="container">
-            <div className="ass">
+        // <div className="container">
             <div className="catigories">
                 <ul className="catigories__btn">
                     <li onClick={() => setState(null)} className={state === null ? 'btn btn--cat active': 'btn btn--cat'} >all</li>
@@ -23,18 +21,10 @@ function Sorted(props){
                         </li>)}
                 </ul>
             </div>
-            <div className="sortpopop">
-                <span>popular: </span>
-                <ul>
-                    <li>ass</li>
-                    <li>pass</li>
-                    <li>mass</li>
-                </ul>
-            </div>
-            </div>
-        </div>
+        // </div>
     )
 }
+
 
 
 

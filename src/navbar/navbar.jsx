@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from './logo_pizza.svg'
 import basket from './basket.svg'
+import {Link} from 'react-router-dom'
 import './navbar.scss'
 
 
@@ -20,9 +21,11 @@ class Navbar extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <a href="#" className="basket">
-                        <img src={basket} alt=""/>
-                    </a>
+                    <Link to="/card">
+                        <div href="#" className="basket">
+                            <img src={basket} alt=""/>
+                        </div>
+                    </Link>
                 </div>
             </div>
         )
