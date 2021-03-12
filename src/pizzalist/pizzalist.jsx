@@ -1,47 +1,31 @@
 // import React, {useState, useRef, useEffect} from 'react'
 import './pizzalist.scss'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
+import PizzaBlock from './pizzablock'
 
 
 function Pizzalist(props){
     const [currentSize, setCurrentSize] = useState(0)
     const [currentDough, setCurrentDough] = useState(0)
-    const itemRef = useRef()
-    let propsList = props.prop.all
-
+    let propsList = props.prop
+    console.log(propsList)
 
     const togleCurrentSize = () =>{
         setCurrentSize(!currentSize)
-        console.log(currentSize)
     }
+
+
     return(
         <div className="container">
                 <h1 className="title">all pizzas</h1>
-
-                <div ref={itemRef} className="items">
-                {propsList && propsList.map((item, index) => 
-                    <div className="item" key={`${item}_${index}`}>
-                        <img src={item.img} alt=""/>
-                        <div className="item__name">{item.name}</div>
-                        <div className="switcher">
-                            <div className="dough">
-                                
-                                {item.types.map((items, index) =>
-                                    <div onClick={() => setCurrentDough(index)} key={`${item}_${index}`} className={currentDough === index? "switch__dough actives" : "switch__dough" }>{items}</div>
-                                    )}
-
-                            </div>
-                            {/* <div className="sm__block">
-                                {item.size.map((items, index) => 
-                                    <div onClick={() => setCurrentSize(index)} key={`${items}_${index}`} className={currentSize === index ?'switch__size actives': 'switch__size'}>
-                                        {items}cm
-                                    </div>               
-                            </div> */}
-                        </div>
-                        <button className="btn">+Add</button>
-                    </div>)}
+                <div className="items">
+                    {propsList.map(item => 
+                        <div className="item">
+                            {/* {console.log(item.id)} */}
+                            <PizzaBlock key={item.id} pop={item}/>
+                        </div>)}
                 </div>
-            </div>
+        </div>
     )
 }
 

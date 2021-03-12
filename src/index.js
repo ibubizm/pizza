@@ -9,7 +9,6 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Route exect path="/" component={App}/>
-      {/* <App /> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
