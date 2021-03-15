@@ -8,7 +8,6 @@ function Pizzalist(props){
     const [currentSize, setCurrentSize] = useState(0)
     const [currentDough, setCurrentDough] = useState(0)
     let propsList = props.prop
-    console.log(propsList)
 
     const togleCurrentSize = () =>{
         setCurrentSize(!currentSize)
@@ -19,7 +18,7 @@ function Pizzalist(props){
         <div className="container">
                 <h1 className="title">all pizzas</h1>
                 <div className="items">
-                    {propsList.map(item => 
+                    {propsList.map((item, index) => 
                         <div className="item">
                             {/* {console.log(item.id)} */}
                             <PizzaBlock key={item.id} pop={item}/>

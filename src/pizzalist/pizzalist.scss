@@ -45,10 +45,14 @@
   input {
     display: none;
   }
+
+  li {
+    cursor: pointer;
+  }
 }
 
 .switch__dough,
-.sm {
+.switch__size {
   width: 50%;
   text-align: center;
   padding: 5px;
@@ -59,4 +63,10 @@
   height: 100%;
   background-color: darken(#fff, 50%);
   border-radius: 7px;
+}
+
+.price__add {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }

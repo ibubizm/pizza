@@ -24,12 +24,12 @@ function App() {
       <Sorted items={
         ['grill', 'closed', 'spicy', 'vegan']
       }/>
-      <SortPoPop prop={['ass', 'mass', 'pass']}/>
+      <SortPoPop prop={['popular', 'alphabet', 'random']}/>
       </div>
       
-        <Route path="/" exect render={() => <Pizzalist prop={pizzas} />} />
-        {/* <Pizzalist key={pizzas.id} prop={pizzas.map(item => item)}/> */}
-        
+       <Route path="/" exect render={() => <Pizzalist prop={pizzas} />} />
+         {console.log(new Date().toLocaleDateString())}
+         
     </div>
   );
 }
