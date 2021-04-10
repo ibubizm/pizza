@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom'
 import './navbar.scss'
 
 
-class Navbar extends React.Component{
-    render(){
-        return(
-            <div className="container">
-                <div className="header">
+function Navbar(){
+    return(
+        <div className="container">
+            <div className="header">
+                <Link to="/" className="hz">
                     <div className="nav__left">
                         <img src={logo} alt=""/>
                         <div className="nav__elements">
@@ -21,15 +21,21 @@ class Navbar extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <Link to="/card">
-                        <div href="#" className="basket">
+                </Link>
+                <Link to="/basket" className="basket_link">
+                    <div href="#" className="basket">
+                        <div className="left__basket">
                             <img src={basket} alt=""/>
                         </div>
-                    </Link>
-                </div>
+                        <div className="right__basket">
+                            000$
+                        </div>
+                    </div>
+                </Link>
             </div>
-        )
-    }
+        </div>
+    )
 }
+
 
 export default Navbar

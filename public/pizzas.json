@@ -86,7 +86,7 @@
         "name": "Четыре сезона",
         "types": ["slim", "fat"],
         "sizes": [26, 30, 40],
-        "price": 395,
+        "price": 26,
         "category": 5,
         "rating": 10
       },

@@ -1,29 +1,37 @@
-import React, {useState} from 'react'
+import { useState, useCallback } from 'react'
 import './sorted.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { memo } from 'react'
+import {setCategory} from '../redux/actions/filters'
 
 
 
-function Sorted(props){
-    const [state, setState] = useState(null)
+const Sorted = memo(function Sorted({ items, onClickItem, activeCategory }) {
+    // const [state, setState] = useState(0)
+    const dispatch = useDispatch()
 
-    return(
-        // <div className="container">
-            <div className="catigories">
-                <ul className="catigories__btn">
-                    <li onClick={() => setState(null)} className={state === null ? 'btn btn--cat active': 'btn btn--cat'} >all</li>
-                    {props.items && props.items.map((item, index) => 
-                        <li onClick={() => setState(index)}
-                            className={state === index ?
-                                'btn btn--cat active' : 
-                                'btn btn--cat'}
-                            key={`${item}_${index}`}>
-                                {item}
-                        </li>)}
-                </ul>
-            </div>
-        // </div>
+    const fun = (index) => {
+        onClickItem(index)
+        // setState(index)
+    }
+
+
+    return (
+        <div className="catigories">
+            <ul className="catigories__btn">
+                <li onClick={() => dispatch(setCategory(null))} className={activeCategory === null ? 'btn btn--cat active' : 'btn btn--cat'} >all</li>
+                {items && items.map((item, index) =>
+                    <li onClick={() => fun(index)}
+                        className={activeCategory === index ?
+                            'btn btn--cat active' :
+                            'btn btn--cat'}
+                        key={`${item}_${index}`}>
+                        {item}
+                    </li>)}
+            </ul>
+        </div>
     )
-}
+})
 
 
 

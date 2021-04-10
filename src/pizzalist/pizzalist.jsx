@@ -1,29 +1,61 @@
-// import React, {useState, useRef, useEffect} from 'react'
+
 import './pizzalist.scss'
-import { useState } from 'react'
+import {fetchPizzas} from '../redux/actions/pizzas'
+import {useSelector, useDispatch} from 'react-redux'
 import PizzaBlock from './pizzablock'
+import SortPoPop from '../sorted/sortpopop'
+import Sorted from '../sorted/sorted'
+import {useCallback, useEffect} from 'react'
+import {setCategory, setSortPoPop} from '../redux/actions/filters'
+import LoadingPizzas from './loadingPizzas'
 
 
-function Pizzalist(props){
-    const [currentSize, setCurrentSize] = useState(0)
-    const [currentDough, setCurrentDough] = useState(0)
-    let propsList = props.prop
+const categoryList = ['grill', 'closed', 'spicy', 'vegan']
+const sortDict = [
+    {name: 'rating', type: 'popular'},
+    {name: 'name', type: 'alphabet'},
+    {name: 'price', type: 'price'}]
 
-    const togleCurrentSize = () =>{
-        setCurrentSize(!currentSize)
-    }
+function Pizzalist(){
+    const {items, isLoaded} = useSelector(({pizzasReducer}) => pizzasReducer)
+    const {sortBy, category} = useSelector(({filtersReducer}) => filtersReducer)
+    
+    const dispatch = useDispatch()
+
+    const selectCategory = useCallback((index) =>{
+        dispatch(setCategory(index))      
+    }, [])
+
+    const selectSort = useCallback((name) =>{
+        dispatch(setSortPoPop(name))
+    }, [])
 
 
-    return(
+    useEffect(() => {
+            dispatch(fetchPizzas(sortBy, category))
+            console.log(sortBy)
+      }, [sortBy, category])
+
+
+    return( 
         <div className="container">
-                <h1 className="title">all pizzas</h1>
-                <div className="items">
-                    {propsList.map((item, index) => 
-                        <div className="item">
-                            {/* {console.log(item.id)} */}
-                            <PizzaBlock key={item.id} pop={item}/>
-                        </div>)}
-                </div>
+            <div className="sorting">
+                <Sorted activeCategory={category} onClickItem={selectCategory} items={categoryList}/>
+                <SortPoPop activeSortBy={sortBy} onClickSort={selectSort} prop={sortDict}/>
+             </div>
+            <h1 className="title">all pizzas</h1>
+            <div className="items">
+                {isLoaded ?  items.map((item) => 
+                    <div key={`${item.name}_${item.id}`} className="item">
+                        <PizzaBlock key={`${item.name}_${item.id}`} pop={item}/> 
+                    </div>)
+                     :
+                    Array(10).fill(0).map((i, index) =>
+                    <div className="item">
+                        < LoadingPizzas key={index} />
+                    </div> )
+                    }
+            </div>
         </div>
     )
 }

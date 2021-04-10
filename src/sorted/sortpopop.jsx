@@ -1,13 +1,24 @@
 import {useState, useEffect, useRef} from 'react'
+import {memo} from 'react'
+import { useSelector } from 'react-redux'
+// import {setSortPoPop} from '../redux/actions/filters'
 
-function SortPoPop(props){
+const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
     const [visiblePoPop, setVisiblePoPop] = useState(false)
-    const [selectCatigory, setCatigory] = useState(0)
+    // const [selectCatigory, setCatigory] = useState(0)
     const sortRef = useRef()
-    const activeName = props.prop[selectCatigory]
+    // const activeName = prop[selectCatigory].name
+
+    const sortBy = useSelector(({filtersReducer}) => filtersReducer.sortBy)
+
+    console.log(sortBy)
 
     const togleVisiblePoPop = () =>{
         setVisiblePoPop(!visiblePoPop)
+    }
+
+    const fun = (index) => {
+        onClickSort(index)
     }
 
     const handleOutsideClick = (event) =>{
@@ -25,21 +36,24 @@ function SortPoPop(props){
     }, [])
 
     return(
-        // <div className="container">
             <div ref={sortRef} className="sort">
                 <p>sorted: </p>
-                <span  onClick={togleVisiblePoPop}>{activeName}</span>
+                <span  onClick={togleVisiblePoPop}>{sortBy}</span>
                 {visiblePoPop &&
                 <div  className="sort__popop">
                     <ul>
-                        {props.prop && props.prop.map((item, index) =>
-                            <li onClick={() => setCatigory(index)} className={selectCatigory === index ? 'active': ''} key={`${item}_${index}`}>{item}</li>
+                        {prop && prop.map((obj, index) =>
+                            <li onClick={() => fun(obj.name)} 
+                            className={activeSortBy === obj.name ? 
+                                'active': ''} 
+                                key={`${obj.name}_${index}`}>
+                                    {obj.type}   
+                            </li>
                         )}
                     </ul>
                 </div>}
-            {/* </div> */}
         </div>
     )
-}
+})
 
 export default SortPoPop
