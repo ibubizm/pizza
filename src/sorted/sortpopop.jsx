@@ -5,10 +5,7 @@ import { useSelector } from 'react-redux'
 
 const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
     const [visiblePoPop, setVisiblePoPop] = useState(false)
-    // const [selectCatigory, setCatigory] = useState(0)
     const sortRef = useRef()
-    // const activeName = prop[selectCatigory].name
-
     const sortBy = useSelector(({filtersReducer}) => filtersReducer.sortBy)
 
     console.log(sortBy)
@@ -17,8 +14,9 @@ const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
         setVisiblePoPop(!visiblePoPop)
     }
 
-    const fun = (index) => {
-        onClickSort(index)
+    const activeItem = (obj) => {
+        onClickSort(obj)
+        console.log(obj)
     }
 
     const handleOutsideClick = (event) =>{
@@ -38,16 +36,16 @@ const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
     return(
             <div ref={sortRef} className="sort">
                 <p>sorted: </p>
-                <span  onClick={togleVisiblePoPop}>{sortBy}</span>
+                <span  onClick={togleVisiblePoPop}>{sortBy.name}</span>
                 {visiblePoPop &&
                 <div  className="sort__popop">
                     <ul>
                         {prop && prop.map((obj, index) =>
-                            <li onClick={() => fun(obj.name)} 
+                            <li onClick={() => activeItem(obj)} 
                             className={activeSortBy === obj.name ? 
                                 'active': ''} 
                                 key={`${obj.name}_${index}`}>
-                                    {obj.type}   
+                                    {obj.name}   
                             </li>
                         )}
                     </ul>

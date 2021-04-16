@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
-// import {useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import ContentLoader from "react-content-loader"
+import {cartReducer} from '../redux/actions/cart'
 
 function PizzaBlock({pop}){
     const [currentDoughIndex, setCurrentDoughIndex] = useState(0)
@@ -9,14 +10,18 @@ function PizzaBlock({pop}){
     const [currentSizeIndex, setCurrentSizeIndex] = useState(0)
     const [currentSizeValue, setCurrentSizeValue] = useState(pop.sizes[0])
     const [finalPrice, setFinalPrice] = useState(pop.price)
-
+    const dispatch = useDispatch()
 
     const addPizzas = () =>{
         let obj = {
+            name: pop.name,
             img : pop.imageUrl,
             dough : currentDoughValue,
-            size : currentSizeValue
+            size : currentSizeValue,
+            price: finalPrice
         }
+        dispatch(cartReducer(obj))
+       
     }
     
 

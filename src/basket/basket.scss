@@ -1,0 +1,77 @@
+@import '../styles/vars.scss';
+
+.basket__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  justify-content: space-between;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+}
+
+.left__side {
+  display: flex;
+}
+
+.basket__img {
+  width: 90px;
+  height: auto;
+}
+
+.cart__title {
+  display: flex;
+  color: $orange;
+}
+
+.cart__logo {
+  width: 30px;
+}
+
+.item__subtitle {
+  color: $darkGray;
+}
+
+.count__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.count {
+  margin: 0 20px;
+}
+
+.circle__btn {
+  border-radius: 100%;
+  cursor: pointer;
+  border-style: solid;
+  border-color: $orange;
+  color: $orange;
+  font-size: 22px;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    background-color: $orange;
+    transition: all ease 0.2s;
+    color: white;
+  }
+}
+
+.close__btn {
+  width: 30px;
+  cursor: pointer;
+  height: auto;
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+
+.close {
+  width: 100%;
+  height: auto;
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+}

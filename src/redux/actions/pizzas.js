@@ -2,8 +2,7 @@
 
 export const fetchPizzas = (sortBy, category) => (dispatch) => {
     dispatch(setLoading(false))
-    console.log(category)
-    fetch(`http://localhost:3001/pizzas?${category != null ? `category=${category}` : ''}&_sort=${sortBy}`)
+    fetch(`http://localhost:3001/pizzas?${category != null ? `category=${category}` : ''}&_sort=${sortBy.type}`)
     .then(resp => resp.json())
     .then(json => dispatch(setPizzas(json)))
 }
