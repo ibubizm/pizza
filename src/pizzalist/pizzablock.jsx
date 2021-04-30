@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import ContentLoader from "react-content-loader"
-import {cartReducer} from '../redux/actions/cart'
+import {addObjToCart} from '../redux/actions/cart'
 
-function PizzaBlock({pop}){
+function PizzaBlock({pop, onClickAdd}){
     const [currentDoughIndex, setCurrentDoughIndex] = useState(0)
     const [currentDoughValue, setCurrentDoughValue] = useState(pop.types[0])
     
@@ -14,15 +14,21 @@ function PizzaBlock({pop}){
 
     const addPizzas = () =>{
         let obj = {
+            id: pop.id,
             name: pop.name,
             img : pop.imageUrl,
             dough : currentDoughValue,
             size : currentSizeValue,
             price: finalPrice
         }
-        dispatch(cartReducer(obj))
+        // dispatch(addObjToCart(obj))
+        onClickAdd(obj)
        
     }
+
+    // const onAdd = () =>{
+
+    // }
     
 
     const priceFunc = useEffect(() =>{
@@ -91,7 +97,7 @@ function PizzaBlock({pop}){
             </div>
             <div className="price__add">
                 {finalPrice.toFixed(1)}BYN
-                <button onClick={addPizzas} className="btn">+Add</button>
+                <button onClick={addPizzas} className="btn btn--add">+Add</button>
             </div>
         </>
     )

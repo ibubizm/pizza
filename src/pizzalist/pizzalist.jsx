@@ -8,6 +8,7 @@ import Sorted from '../sorted/sorted'
 import {useCallback, useEffect, useState} from 'react'
 import {setCategory, setSortPoPop} from '../redux/actions/filters'
 import LoadingPizzas from './loadingPizzas'
+import {addObjToCart} from '../redux/actions/cart'
 
 
 const categoryList = ['grill', 'closed', 'spicy', 'vegan']
@@ -29,10 +30,16 @@ function Pizzalist(){
         dispatch(setSortPoPop(name))
     }, [])
 
+    const addToCart = (obj) =>{
+        dispatch(addObjToCart(obj))
+    }
+
 
     useEffect(() => {
             dispatch(fetchPizzas(sortBy, category))
       }, [sortBy, category])
+
+
 
 
     return( 
@@ -45,7 +52,7 @@ function Pizzalist(){
             <div className="items">
                 {isLoaded ?  items.map((item) => 
                     <div key={`${item.name}_${item.id}`} className="item">
-                        <PizzaBlock key={`${item.name}_${item.id}`} pop={item}/> 
+                        <PizzaBlock onClickAdd={addToCart} key={`${item.name}_${item.id}_${ new Date().getTime() }`} pop={item}/> 
                     </div>)
                      :
                     Array(10).fill(0).map((i, index) =>

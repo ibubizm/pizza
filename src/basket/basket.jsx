@@ -1,11 +1,35 @@
 import './basket.scss'
 import basket from '../navbar/basket.svg'
-import closeImg from '../styles/close.svg'
+import {useDispatch} from 'react-redux'
 import {useSelector} from 'react-redux'
+import CartItem from './cart_item'
+import {cleanCart, delFromCart} from '../redux/actions/cart'
+import { useEffect } from 'react'
+
 
 function Basket() {
-    const basketItem = useSelector(({cartReducer}) => cartReducer.item)
-    console.log(basketItem)
+    const basketItem = useSelector(({cartReducer}) => cartReducer.items)
+    const {price, count} = useSelector(({cartReducer}) => cartReducer)
+    const ass = [].concat.apply([], Object.values(basketItem))
+    const dispatch = useDispatch()
+    
+    const cleanCarts = () =>{
+        if(window.confirm('Are you shure?')){
+            dispatch(cleanCart())
+        }
+    }
+
+    
+    const delItem = (id, obj, index) =>{
+        // console.log(Object.values(basketItem[id]))
+
+        delete basketItem[id]
+        
+        dispatch(delFromCart(basketItem))        
+    }
+
+    useEffect(delItem, [basketItem])
+
     return(
         <div className="container">
             <div className="cart">
@@ -14,29 +38,9 @@ function Basket() {
                         <img className="cart__logo" src={basket} alt=""/>
                         <h2>Basket</h2>
                     </div>
-                   { basketItem && <div className="basket__items">
-                        <div className="basket__item">
-                            <div className="left__side">
-                                <img className="basket__img" src={basketItem.img} alt=""/>
-                                <div className="item__content">
-                                    <strong>{basketItem.name}</strong>
-                                    <div className="item__subtitle">
-                                       {`${basketItem.dough}, ${basketItem.size}cm` }
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="count__buttons">
-                                <button className="circle__btn">-</button>
-                                <div className="count"><strong>1</strong></div>
-                                <button className="circle__btn">+</button>
-                            </div>
-                            <div className="cost">
-                                {basketItem.price}BYN
-                            </div>
-                            <button className="close__btn"><img className="close" src={closeImg} alt=""/></button>
-                            
-                        </div>
-                    </div>}
+                    {/* {ass.map()} */}
+                    <CartItem key={`${ new Date().getTime() }`} onClickClean={cleanCarts} onClickDel={delItem} ass={ass} price={price} count={count}/>  
+
                 </div>
             </div>
         </div>

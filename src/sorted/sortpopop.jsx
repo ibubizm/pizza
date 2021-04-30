@@ -8,7 +8,6 @@ const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
     const sortRef = useRef()
     const sortBy = useSelector(({filtersReducer}) => filtersReducer.sortBy)
 
-    console.log(sortBy)
 
     const togleVisiblePoPop = () =>{
         setVisiblePoPop(!visiblePoPop)
@@ -16,7 +15,6 @@ const SortPoPop = memo(function SortPoPop({prop, onClickSort, activeSortBy}){
 
     const activeItem = (obj) => {
         onClickSort(obj)
-        console.log(obj)
     }
 
     const handleOutsideClick = (event) =>{

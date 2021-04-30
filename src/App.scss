@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
-
+@import './styles/vars.scss';
 // * {
 //   box-sizing: border-box;
 // }
@@ -18,10 +18,37 @@ body {
 
 .btn {
   border-radius: 20px;
+  font-family: inherit;
   border: none;
   padding: 10px 20px;
-  background-color: rgb(255, 127, 22);
+  background-color: $orange;
   color: #fff;
   outline: none;
   cursor: pointer;
+
+  &--add {
+    font-family: inherit;
+    border: 2px solid $orange;
+    font-weight: 700;
+    color: $orange;
+    background-color: inherit;
+  }
+  &:active {
+    background-color: darken($orange, 10%);
+    color: #fff;
+  }
 }
+
+// .btn {
+//   &--add {
+//     font-family: inherit;
+//     border: 2px solid $orange;
+//     font-weight: 700;
+//     color: $orange;
+//     background-color: inherit;
+//     &:hover {
+//       background-color: $orange;
+//       color: white;
+//     }
+//   }
+// }

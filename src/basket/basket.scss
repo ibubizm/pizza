@@ -11,6 +11,7 @@
 
 .left__side {
   display: flex;
+  width: 500px;
 }
 
 .basket__img {
@@ -74,4 +75,52 @@
 .cost {
   display: flex;
   align-items: center;
+}
+
+.clean__div {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  float: right;
+  margin-top: -30px;
+  margin-right: 20px;
+}
+
+.clean_cart {
+  display: flex;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+}
+
+.trash__img {
+  width: 16px;
+  height: auto;
+}
+
+.pay__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.price__pay {
+  display: flex;
+  align-items: center;
+}
+
+.btn--pay {
+  margin-left: 10px;
+}
+
+.empty__h1 {
+  text-align: center;
+}
+
+.empty__img {
+  display: flex;
+  margin: 0 auto;
 }
