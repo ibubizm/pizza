@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import closeImg from '../styles/close.svg'
 import trashImg from '../styles/delete.svg'
 import { addObjToCart, decrementItem } from '../redux/actions/cart'
@@ -33,7 +32,7 @@ function CartItem({ basketItems, onClickDel, onClickClean, price, count }) {
         basketItems.map((item, index) => (
           <div
             className="basket__item"
-            key={`${item.id}_${item.name}_${new Date().getTime()}`}
+            key={`${item.id}_${item.index}_${new Date().getTime()}`}
           >
             <div className="left__side">
               <img className="basket__img" src={item.img} alt="" />

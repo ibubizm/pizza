@@ -9,7 +9,6 @@ const cart = (state = initialState, action) => {
     case 'ADD_OBJ_TO_CART': {
       const objName =
         action.payload.id + '_' + action.payload.size + action.payload.dough
-      console.log(objName)
       //   const newItems = {
       //     ...state.items,
       //     [action.payload.id]: !state.items[action.payload.id]
@@ -45,16 +44,9 @@ const cart = (state = initialState, action) => {
         ...state,
         items: newItems,
         count,
-        // count: [].concat.apply([], Object.values(newItems)).length,
         price,
       }
     }
-
-    // case 'ADD_PRODUCT':
-    //   console.log(action.payload)
-    //   return {
-    //     ...state,
-    //   }
 
     case 'REMOVE_PRODUCT':
       const objName =
@@ -101,14 +93,16 @@ const cart = (state = initialState, action) => {
       }
 
     case 'DEL_FROM_CART':
-      console.log(action.payload)
-      const allObjInCart = [].concat.apply([], Object.values(action.payload))
+      const name =
+        action.payload.id + '_' + action.payload.size + action.payload.dough
+      delete state.items[name]
+      const allObjInCart = [].concat.apply([], Object.values(state.items))
       const price = allObjInCart.reduce((sum, obj) => obj.price + sum, 0)
+
       const count = allObjInCart.reduce((sum, obj) => obj.count + sum, 0)
 
       return {
         ...state,
-        items: action.payload,
         count,
         price,
       }

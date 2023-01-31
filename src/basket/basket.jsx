@@ -27,14 +27,11 @@ function Basket() {
   const delItem = (id, obj, index) => {
     // const newBasket = basketItems.splice(index, 1)
     // delete basketItem[id]
-    // console.log(newBasket)
-    // console.log(basketItem[id], obj)
-    console.log(basketItem)
-
-    // dispatch(delFromCart(basketItem))
+    console.log(obj)
+    dispatch(delFromCart(obj))
   }
 
-  useEffect(delItem, [basketItem])
+  // useEffect(delItem, [basketItem])
 
   return (
     <div className="container">
