@@ -36,7 +36,7 @@
   border-radius: 7px;
   // background-color: rgb(231, 227, 227);
 
-  background-color: $gray;
+  background-color: #efefef;
 
   margin-bottom: 10px;
 }
@@ -66,7 +66,7 @@
 .actives {
   width: 100%;
   height: 100%;
-  background-color: $darkGray;
+  background-color: $orange;
   border-radius: 7px;
 }
 
@@ -74,4 +74,18 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
+}
+
+@media (max-width: 390px) {
+  .title {
+    margin-left: 20px;
+  }
+  .item {
+    width: 100%;
+    img {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
 }

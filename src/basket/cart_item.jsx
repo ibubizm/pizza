@@ -72,7 +72,9 @@ function CartItem({ basketItems, onClickDel, onClickClean, price, count }) {
         <div className="pay__div">
           <div className="totol__count">Totol count: {count}</div>
           <div className="price__pay">
-            <div className="final__price">Final price : {price}</div>
+            <div className="final__price">
+              Final price : {Number(price).toFixed(2)}
+            </div>
             <button className="btn btn--pay">pay</button>
           </div>
         </div>

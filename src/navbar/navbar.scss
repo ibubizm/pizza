@@ -62,3 +62,12 @@
 .left__basket {
   border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 390px) {
+  .header {
+    padding: 15px;
+  }
+  .nav__elements {
+    width: auto;
+  }
+}

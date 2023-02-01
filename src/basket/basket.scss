@@ -124,3 +124,29 @@
   display: flex;
   margin: 0 auto;
 }
+
+@media (max-width: 390px) {
+  .cart__title {
+    margin-left: 20px;
+  }
+
+  .basket__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .left__side {
+    width: auto;
+  }
+
+  .cost {
+    justify-content: center;
+  }
+
+  .empty__img {
+    width: 100%;
+  }
+}

@@ -66,3 +66,29 @@
     }
   }
 }
+
+@media (max-width: 390px) {
+  .sorting {
+    display: block;
+    width: 100%;
+  }
+
+  .catigories__btn {
+    flex-wrap: wrap;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  .sort {
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  .sort__popop {
+    ul {
+      background: #efefef;
+      &:last-child .active {
+        border-radius: 7px;
+      }
+    }
+  }
+}
