@@ -24,10 +24,7 @@ function Basket() {
     }
   }
 
-  const delItem = (id, obj, index) => {
-    // const newBasket = basketItems.splice(index, 1)
-    // delete basketItem[id]
-    console.log(obj)
+  const delItem = (obj) => {
     dispatch(delFromCart(obj))
   }
 

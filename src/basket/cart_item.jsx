@@ -29,10 +29,10 @@ function CartItem({ basketItems, onClickDel, onClickClean, price, count }) {
           />
         </div>
       ) : (
-        basketItems.map((item, index) => (
+        basketItems.map((item) => (
           <div
             className="basket__item"
-            key={`${item.id}_${item.index}_${new Date().getTime()}`}
+            key={`${item.id}_${item.dough}_${item.size}`}
           >
             <div className="left__side">
               <img className="basket__img" src={item.img} alt="" />
@@ -57,11 +57,10 @@ function CartItem({ basketItems, onClickDel, onClickClean, price, count }) {
                 +
               </button>
             </div>
-            <div className="cost">{item.price * item.count}BYN</div>
-            <button
-              onClick={() => onClickDel(item.id, item, index)}
-              className="close__btn"
-            >
+            <div className="cost">
+              {Number(item.price * item.count).toFixed(2)}BYN
+            </div>
+            <button onClick={() => onClickDel(item)} className="close__btn">
               <img className="close" src={closeImg} alt="" />
             </button>
           </div>
