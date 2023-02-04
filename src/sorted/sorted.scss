@@ -1,6 +1,5 @@
 .sorting {
   display: flex;
-  width: 1200px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
@@ -13,6 +12,7 @@
 .catigories__btn {
   display: flex;
   list-style: none;
+  padding: 0;
 }
 
 .btn {
@@ -64,7 +64,7 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 700px) {
   .sorting {
     display: block;
     width: 100%;
