@@ -9,7 +9,6 @@
 
 .catigories {
   display: flex;
-  // justify-content: space-between;
 }
 .catigories__btn {
   display: flex;
@@ -21,11 +20,6 @@
     background-color: rgb(231, 227, 227);
     margin-right: 5px;
     color: black;
-
-    // &:hover {
-    //   top: -10px;
-    //   cursor: pointer;
-    // }
   }
 }
 
@@ -56,11 +50,14 @@
     text-align: center;
     padding-inline-start: 0;
     border: 1px solid black;
+    background: #efefef;
+    &:last-child .active {
+      border-radius: 7px;
+    }
     li {
       padding: 10px 30px;
 
       &:hover {
-        // background-color: darken(10%);
         cursor: pointer;
       }
     }
@@ -82,13 +79,5 @@
   .sort {
     justify-content: flex-end;
     margin-right: 20px;
-  }
-  .sort__popop {
-    ul {
-      background: #efefef;
-      &:last-child .active {
-        border-radius: 7px;
-      }
-    }
   }
 }

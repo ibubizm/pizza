@@ -4,17 +4,11 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import CartItem from './cart_item'
 import { cleanCart, delFromCart } from '../redux/actions/cart'
-import { useEffect } from 'react'
 
 function Basket() {
   const basketItem = useSelector(({ cartReducer }) => cartReducer.items)
   const { price, count } = useSelector(({ cartReducer }) => cartReducer)
   const basketItems = [].concat.apply([], Object.values(basketItem))
-  // const basketItems = []
-  // for (let a in basketItem) {
-  //   basketItems.push(basketItem[a][0])
-  //   console.log(basketItem[a][0])
-  // }
 
   const dispatch = useDispatch()
 
@@ -27,8 +21,6 @@ function Basket() {
   const delItem = (obj) => {
     dispatch(delFromCart(obj))
   }
-
-  // useEffect(delItem, [basketItem])
 
   return (
     <div className="container">

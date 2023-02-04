@@ -1,7 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-// import ContentLoader from "react-content-loader"
-// import {addObjToCart} from '../redux/actions/cart'
 
 function PizzaBlock({ pop, onClickAdd }) {
   const [currentDoughIndex, setCurrentDoughIndex] = useState(0)
@@ -10,7 +7,6 @@ function PizzaBlock({ pop, onClickAdd }) {
   const [currentSizeIndex, setCurrentSizeIndex] = useState(0)
   const [currentSizeValue, setCurrentSizeValue] = useState(pop.sizes[0])
   const [finalPrice, setFinalPrice] = useState(pop.price)
-  //   const dispatch = useDispatch()
 
   const addPizzas = () => {
     let obj = {
@@ -21,7 +17,6 @@ function PizzaBlock({ pop, onClickAdd }) {
       size: currentSizeValue,
       price: finalPrice,
     }
-    // dispatch(addObjToCart(obj))
     onClickAdd(obj)
   }
 

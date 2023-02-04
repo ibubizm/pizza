@@ -1,5 +1,5 @@
 import './pizzalist.scss'
-import { fetchPizzas } from '../redux/actions/pizzas'
+import { fetchPizzas, setPizzas, test } from '../redux/actions/pizzas'
 import { useSelector, useDispatch } from 'react-redux'
 import PizzaBlock from './pizzablock'
 import SortPoPop from '../sorted/sortpopop'

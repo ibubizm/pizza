@@ -1,18 +1,90 @@
+import jso from '../../pizzas.json'
 
+// export const fetchPizzas = (sortBy, category) => (dispatch) => {
+//   dispatch(setLoading(false))
+//   fetch(
+//     `/pizzas?${category != null ? `category=${category}` : ''}&_sort=${
+//       sortBy.type
+//     }`
+//   )
+//     .then((resp) => resp.json())
+//     .then((json) => {
+//       dispatch(setPizzas(json))
+//       console.log(JSON.parse(JSON.stringify(jso)).pizzas)
+//       console.log(json)
+//     })
+// }
 
-export const fetchPizzas = (sortBy, category) => (dispatch) => {
-    dispatch(setLoading(false))
-    fetch(`/pizzas?${category != null ? `category=${category}` : ''}&_sort=${sortBy.type}`)
-    .then(resp => resp.json())
-    .then(json => dispatch(setPizzas(json)))
+const sortByPrice = (mas) => {
+  return mas.sort((a, b) => a.price - b.price)
 }
 
+const sortByName = (mas) => {
+  return mas.sort((a, b) => a.name < b.name)
+}
+
+const sortByRating = (mas) => {
+  return mas.sort((a, b) => a.price - b.price)
+}
+
+//shit
+export const fetchPizzas =
+  (sortBy, category = null) =>
+  (dispatch) => {
+    dispatch(setLoading(false))
+
+    let json = JSON.parse(JSON.stringify(jso)).pizzas
+
+    if (category == null && sortBy.type == 'price') {
+      return dispatch(setPizzas(sortByPrice(json)))
+    }
+    if (category == null && sortBy.type == 'name') {
+      return dispatch(setPizzas(sortByName(json)))
+    }
+    if (category == null && sortBy.type == 'rating') {
+      return dispatch(setPizzas(sortByRating(json)))
+    }
+    if (sortBy.type == 'rating') {
+      return dispatch(
+        setPizzas(
+          json
+            .filter((item) => item.category == category)
+            .sort((a, b) => a.rating - b.rating)
+        )
+      )
+    }
+    if (sortBy.type == 'price') {
+      return dispatch(
+        setPizzas(
+          json
+            .filter((item) => item.category == category)
+            .sort((a, b) => a.price - b.price)
+        )
+      )
+    }
+
+    if (sortBy.type == 'name') {
+      return dispatch(
+        setPizzas(
+          json
+            .filter((item) => item.category == category)
+            .sort((a, b) => a.name > b.name)
+        )
+      )
+    }
+  }
+//shit
 export const setLoading = (value) => ({
-    type: 'SET_LOADING',
-    payload: value
+  type: 'SET_LOADING',
+  payload: value,
 })
 
-export const setPizzas = (items) =>({
-    type: 'SET_PIZZAS',
-    payload: items
+export const setPizzas = (items) => ({
+  type: 'SET_PIZZAS',
+  payload: items,
+})
+
+export const test = (items, sortBy, category) => ({
+  type: 'TEST',
+  payload: { items, sortBy, category },
 })
