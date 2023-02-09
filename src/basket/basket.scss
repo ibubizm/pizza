@@ -42,12 +42,17 @@
 }
 
 .circle__btn {
-  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
   cursor: pointer;
   border-style: solid;
   border-color: $orange;
   color: $orange;
-  font-size: 22px;
+  font-weight: 900;
+  // font-size: 22px;
   outline: none;
   width: 30px;
   height: 30px;

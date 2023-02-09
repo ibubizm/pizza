@@ -27,7 +27,7 @@ const SortPoPop = memo(function SortPoPop({ prop, onClickSort, activeSortBy }) {
 
   return (
     <div ref={sortRef} className="sort">
-      <p>sorted: </p>
+      <p>sorted by: </p>
       <span onClick={togleVisiblePoPop}>{sortBy.name}</span>
       {visiblePoPop && (
         <div className="sort__popop">
