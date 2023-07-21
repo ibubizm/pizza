@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
 @import './styles/vars.scss';
-// * {
-//   box-sizing: border-box;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600&display=swap');
+* {
+  box-sizing: border-box;
+  // margin: 0;
+  // padding: 0;
+}
 
 body {
-  font-family: 'Balsamiq Sans', cursive;
+  // font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App {
+  background-color: aliceblue;
+  min-height: 100vh;
 }
 
 .container {
@@ -17,24 +30,27 @@ body {
 }
 
 .btn {
-  border-radius: 20px;
+  // border-radius: 20px;
   font-family: inherit;
   border: none;
   padding: 10px 20px;
-  background-color: $orange;
+  // background-color: $orange;
+
   color: #fff;
   outline: none;
   cursor: pointer;
 
   &--add {
     font-family: inherit;
-    border: 2px solid $orange;
+    background-color: $blue;
+    border-radius: 5px;
+    // border: 2px solid $orange;
     font-weight: 700;
-    color: $orange;
-    background-color: inherit;
-  }
-  &:active {
-    background-color: darken($orange, 10%);
-    color: #fff;
+    // color: $orange;
+    // background-color: inherit;
+    &:hover {
+      background-color: lighten($blue, 10%);
+      color: #fff;
+    }
   }
 }

@@ -1,0 +1,16 @@
+.registration__btn {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 28px;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  background-color: #3f7dfb;
+  color: #fff;
+  &:hover {
+    transition: all ease 0.2s;
+    scale: 1.06;
+  }
+}

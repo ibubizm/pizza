@@ -73,4 +73,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+.vars.js
+
 >>>>>>> 026b51ff09ff2894642f95b4fb06c93a63d2cfeb

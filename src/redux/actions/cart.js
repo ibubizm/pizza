@@ -26,3 +26,8 @@ export const decrementItem = (obj) => ({
   type: 'REMOVE_PRODUCT',
   payload: obj,
 })
+
+export const savedProduct = (obj) => ({
+  type: 'SAVED_PRODUCT',
+  payload: obj,
+})

@@ -1,24 +1,31 @@
+@import '../styles/vars.scss';
 .header {
   display: flex;
-  // align-items: center;
+  align-items: center;
   text-decoration: none;
   justify-content: space-between;
-  padding: 10px 0;
-  height: 50px;
-  //   border-bottom: 1px solid gray;
+  // padding: 10px 0;
+  height: 55px;
+  // border-bottom: 1px solid $gray;
 }
 
 .hz {
   display: flex;
+  height: 100%;
   align-items: center;
   text-decoration: none;
   color: black;
 }
-.nav__left {
-  display: flex;
-  height: 100%;
-}
+.nav {
+  &__left {
+    display: flex;
+    height: 100%;
+  }
 
+  &__right {
+    display: flex;
+  }
+}
 .nav__elements {
   width: 200px;
 }
@@ -40,9 +47,14 @@
   align-items: center;
 }
 
-.basket {
+.basket__btn {
   display: flex;
-  background-color: rgb(255, 127, 22);
+  align-items: center;
+  padding: 20px 10px;
+  background-color: black;
+  font-weight: 900;
+  // background-color: rgb(255, 127, 22);
+  border: 1px solid $gray;
   border-radius: 20px;
   height: 35px;
 }
@@ -53,14 +65,14 @@
   align-items: center;
   text-decoration: none;
   padding: 10px;
-  color: black;
+  color: white;
   img {
     height: 25px;
   }
 }
 
 .left__basket {
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 500px) {

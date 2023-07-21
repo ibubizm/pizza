@@ -7,6 +7,7 @@ import './navbar.scss'
 
 function Navbar() {
   const { price, count } = useSelector(({ cartReducer }) => cartReducer)
+  const { isAuth, currentUser } = useSelector(({ userReducer }) => userReducer)
   return (
     <div className="container">
       <div className="header">
@@ -19,15 +20,26 @@ function Navbar() {
             </div>
           </div>
         </Link>
-        <Link to="/basket" className="basket_link">
-          <div href="#" className="basket">
-            <div className="left__basket">
-              <img src={basket} alt="" />
-              {count}
+        {isAuth ? (
+          <Link to="/basket" className="basket_link">
+            <div href="#" className="basket__btn">
+              <div className="left__basket">
+                <img src={basket} alt="" />
+                {count}
+              </div>
+              <div className="right__basket">{Number(price).toFixed(2)}BYN</div>
             </div>
-            <div className="right__basket">{Number(price).toFixed(2)}BYN</div>
+          </Link>
+        ) : (
+          <div className="basket__btn">
+            <Link to="/login" className="">
+              <div className="left__basket">login</div>
+            </Link>
+            <Link to="/registration">
+              <div className="right__basket">reg</div>
+            </Link>
           </div>
-        </Link>
+        )}
       </div>
     </div>
   )

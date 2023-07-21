@@ -1,104 +1,114 @@
 {
-    "pizzas": [
-      {
-        "id": 0,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-        "name": "Пепперони Фреш с перцем",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 22,
-        "category": 0,
-        "rating": 4
-      },
-      {
-        "id": 1,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
-        "name": "Сырная",
-        "types": ["slim"],
-        "sizes": [26, 40],
-        "price": 19,
-        "category": 1,
-        "rating": 6
-      },
-      {
-        "id": 2,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-        "name": "Цыпленок барбекю",
-        "types": ["slim"],
-        "sizes": [26, 40],
-        "price": 19,
-        "category": 1,
-        "rating": 4
-      },
-      {
-        "id": 3,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-        "name": "Кисло-сладкий цыпленок",
-        "types": ["fat"],
-        "sizes": [26, 30, 40],
-        "price": 22,
-        "category": 2,
-        "rating": 2
-      },
-      {
-        "id": 4,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-        "name": "Чизбургер-пицца",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 25,
-        "category": 3,
-        "rating": 8
-      },
-      {
-        "id": 5,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
-        "name": "Крэйзи пепперони",
-        "types": ["slim", "fat"],
-        "sizes": [30, 40],
-        "price": 20,
-        "category": 2,
-        "rating": 2
-      },
-      {
-        "id": 6,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
-        "name": "Пепперони",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 17,
-        "category": 1,
-        "rating": 9
-      },
-      {
-        "id": 7,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
-        "name": "Маргарита",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 19,
-        "category": 4,
-        "rating": 10
-      },
-      {
-        "id": 8,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
-        "name": "Четыре сезона",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 26,
-        "category": 5,
-        "rating": 10
-      },
-      {
-        "id": 9,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-        "name": "Овощи и грибы 🌱",
-        "types": ["slim", "fat"],
-        "sizes": [26, 30, 40],
-        "price": 22,
-        "category": 5,
-        "rating": 7
-      }
-    ]
-  }
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+      "name": "Pepperoni Fresh",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [22, 29, 34],
+      "category": 0,
+      "rating": 4,
+      "description": "Pepperoni Fresh Pizza with Peppers is a delightful combination of classic flavors that will satisfy your pizza cravings. This pizza is known for its vibrant and zesty taste, thanks to the delicious blend of pepperoni and peppers. The Pepperoni Fresh Pizza starts with a traditional pizza crust that is typically hand-tossed or thin and crispy. It serves as a sturdy foundation for the toppings that make this pizza special. The star ingredient, pepperoni, is thinly sliced and provides a rich, smoky, and slightly spicy flavor. The pepperoni slices are spread generously over the crust, ensuring that every bite is filled with its distinctive taste. To complement the pepperoni, fresh peppers are added to the pizza. These peppers come in various colors, such as green, red, or yellow, and they add a vibrant and crunchy element to the overall flavor profile. The peppers provide a subtle sweetness and a mild heat, which pairs perfectly with the spiciness of the pepperoni. In addition to the pepperoni and peppers, the pizza may also include other toppings like mozzarella cheese, which melts into a gooey and stretchy texture when baked. Some variations of the Pepperoni Fresh Pizza may incorporate additional ingredients like onions, mushrooms, or black olives, further enhancing the taste and texture. Once the toppings are in place, the pizza is baked in a hot oven until the crust turns golden brown and crispy, and the cheese is melted and bubbling. The tantalizing aroma that fills the air as it bakes is a surefire way to build up your anticipation. When it's ready, the Pepperoni Fresh Pizza with Peppers is typically served in triangular slices, making it easy to grab and savor. It's a fantastic choice for pizza enthusiasts who enjoy the classic combination of pepperoni with a burst of freshness from the peppers. Whether you're sharing it with friends or enjoying it on your own, the Pepperoni Fresh Pizza with Peppers is a scrumptious and satisfying treat that will leave you craving for another slice."
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      "name": "Cheese",
+      "types": ["slim"],
+      "sizes": [26, 40],
+      "price": [19, 35],
+      "category": 1,
+      "rating": 6,
+      "description": "Cheese pizza is a classic and timeless dish loved by pizza enthusiasts worldwide. It is a simple yet satisfying creation that focuses on the deliciousness of cheese as the main flavor. The foundation of a cheese pizza is the crust, typically made from a dough that is rolled out and shaped into a round base. The crust can be thin and crispy or thick and doughy, depending on personal preference. Once the crust is prepared, it is topped with a generous amount of cheese. Mozzarella is commonly used due to its excellent melting properties and mild flavor, but other types of cheese like cheddar, provolone, or a combination of different cheeses can be used as well. The cheese covers the entire pizza, creating a gooey and stretchy layer that becomes beautifully golden and bubbly when baked. After the cheese is added, the pizza is baked in a hot oven until the crust turns golden brown and the cheese melts and starts to bubble. This process ensures that the cheese becomes wonderfully melted and blends with the other flavors. The result is a mouthwatering pizza with a combination of textures and flavors. The crust provides a satisfying base, while the melted cheese adds a creamy and indulgent element. The cheese can have a mild and milky taste or a more robust and tangy flavor depending on the type used. While a cheese pizza can be enjoyed as is, many people like to customize it with additional ingredients. Popular choices include fresh basil leaves, sliced tomatoes, garlic, or a sprinkle of dried herbs like oregano or basil. These toppings can enhance the overall taste and add a touch of freshness to the cheesy goodness. Whether enjoyed by itself or as a canvas for additional toppings, a cheese pizza is a classic favorite that never fails to satisfy cheese lovers and pizza enthusiasts alike."
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
+      "name": "Barbecue Chicken",
+      "types": ["slim"],
+      "sizes": [26, 40],
+      "price": [19, 35],
+      "category": 1,
+      "rating": 4,
+      "description": "Barbecue Chicken Pizza is a mouthwatering combination of smoky barbecue flavors and tender chicken, making it a popular choice for pizza lovers seeking a savory and slightly tangy twist. The pizza starts with a base of traditional pizza dough, which is rolled out into a thin or thick crust, depending on personal preference. A delicious barbecue sauce is then spread evenly over the dough, serving as the flavorful foundation for the toppings. Next, cooked chicken breast is thinly sliced or shredded and scattered over the sauce. The chicken is usually seasoned with a blend of spices, such as paprika, garlic powder, and black pepper, to enhance its flavor. The chicken provides a hearty and protein-rich element to the pizza. To add a burst of color and crunch, diced red onions and bell peppers are often added as additional toppings. These vegetables not only add a visual appeal but also contribute a fresh and slightly sweet taste to balance the smoky and tangy flavors. Finally, a generous layer of shredded cheese, typically mozzarella, is sprinkled over the pizza. The cheese melts beautifully when baked, creating a luscious and gooey topping that brings all the ingredients together. The pizza is then baked in a hot oven until the crust becomes golden brown and crispy, and the cheese is melted and bubbly. The heat from the oven also helps to infuse the flavors of the barbecue sauce, chicken, and vegetables, creating a harmonious blend of tastes. The resulting pizza is a delightful combination of flavors and textures. The tangy and smoky barbecue sauce pairs perfectly with the tender chicken, while the onions and peppers add a crisp and refreshing element. The melted cheese ties everything together, providing a rich and creamy finish. Barbecue Chicken Pizza is a crowd-pleasing option that satisfies cravings for both pizza and barbecue. Its fusion of savory, tangy, and slightly sweet flavors makes it a delicious choice for anyone looking to enjoy a unique and flavorful pizza experience."
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
+      "name": "Sweet and Sour Chicken",
+      "types": ["fat"],
+      "sizes": [26, 30, 40],
+      "price": [22, 27, 36],
+      "category": 2,
+      "rating": 2,
+      "description": "Sweet and Sour Chicken Pizza is a delectable fusion of Chinese flavors and the beloved pizza concept. It combines the tanginess of sweet and sour sauce with tender chicken pieces, resulting in a unique and mouthwatering pizza experience. The pizza begins with a base of traditional pizza dough, rolled out to create a thin or thick crust. A layer of sweet and sour sauce is then spread evenly over the dough, serving as the flavorful foundation for the toppings. Next, cooked chicken breast is sliced or shredded and placed on top of the sauce. The chicken is typically marinated in a mixture of soy sauce, ginger, garlic, and other seasonings to infuse it with delicious flavors. The chicken provides a protein-rich element and adds a savory taste to the pizza. To complement the sweet and tangy profile, additional toppings may include colorful vegetables such as bell peppers, onions, and pineapple chunks. These ingredients contribute freshness and a contrasting texture to the pizza, balancing the flavors and adding a hint of sweetness. A layer of shredded cheese, often mozzarella, is then generously sprinkled over the pizza. The cheese melts and becomes beautifully golden and bubbly when baked, creating a creamy and gooey topping that enhances the overall taste. The pizza is baked in a hot oven until the crust turns golden brown and crispy, and the cheese is melted to perfection. This cooking process ensures that the flavors meld together, creating a harmonious balance of sweet, sour, savory, and tangy elements. The resulting pizza is a tantalizing blend of tastes and textures. The sweet and sour sauce adds a tangy and slightly sweet note, while the chicken provides a savory and succulent component. The combination of vegetables and melted cheese adds freshness, crunch, and creaminess, completing the delightful flavor profile. Sweet and Sour Chicken Pizza offers a unique and flavorful twist on traditional pizza, bringing together the best of Chinese cuisine and the beloved pizza concept. It is a wonderful choice for those seeking a fusion of tastes and a memorable dining experience. "
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Cheeseburger Pizza",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [25, 32, 37],
+      "category": 3,
+      "rating": 8,
+      "description": "Cheeseburger Pizza is a delicious fusion of two beloved classics - pizza and cheeseburgers. It combines the flavors of a juicy cheeseburger with the convenience and satisfaction of pizza, resulting in a mouthwatering and indulgent culinary experience. The pizza begins with a base of traditional pizza dough, rolled out to create a thin or thick crust. A layer of tangy tomato sauce or ketchup is spread over the dough, reminiscent of the classic condiment used in cheeseburgers. Next, seasoned ground beef is cooked and crumbled, and then spread evenly over the sauce. The beef is typically seasoned with a combination of spices such as salt, pepper, garlic powder, and onion powder, to replicate the flavors of a well-seasoned burger patty. To complete the cheeseburger experience, classic burger toppings are added to the pizza. Sliced tomatoes, diced onions, and pickles are commonly used to provide freshness and crunch. Some variations may include shredded lettuce or even a drizzle of mustard or mayonnaise, adding an extra layer of authenticity. A generous layer of shredded cheese, often a combination of cheddar and mozzarella, is then sprinkled over the pizza. The cheese melts and becomes gooey and bubbly when baked, creating a rich and creamy topping that complements the other flavors. The pizza is baked in a hot oven until the crust becomes golden brown and crispy, and the cheese is melted to perfection. This cooking process allows the flavors to meld together, resulting in a harmonious combination of cheeseburger elements with the comforting goodness of pizza. The resulting Cheeseburger Pizza is a savory and satisfying treat. The tomato sauce and seasoned ground beef provide a familiar and savory base, while the toppings add freshness and texture. The melted cheese brings everything together, creating a decadent and irresistible flavor profile. Cheeseburger Pizza is a fantastic option for those who love the taste of cheeseburgers and want to enjoy it in a different form. It combines the best of both worlds and offers a unique and memorable dining experience."
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+      "name": "Crazy Pepperoni",
+      "types": ["slim", "fat"],
+      "sizes": [30, 40],
+      "price": [20, 29],
+      "category": 2,
+      "rating": 2,
+      "description": "Crazy Pepperoni Pizza is an irresistible and flavorful pizza that is sure to tantalize your taste buds. It is a popular variation of the classic pepperoni pizza, but with an added twist of excitement and spiciness. The Crazy Pepperoni Pizza starts with a deliciously crispy and thin pizza crust, which serves as the perfect base for the mouthwatering toppings. The star of the show is the generous amount of pepperoni that covers the entire pizza. The pepperoni slices are sliced thin and are full of smoky, savory flavors, giving each bite a burst of spiciness. To enhance the flavor profile, Crazy Pepperoni Pizza is often topped with a variety of additional ingredients. These can include shredded mozzarella cheese, which melts into gooey perfection, adding a creamy and indulgent texture to the pizza. Some versions may also include diced onions, bell peppers, or black olives, providing a delightful balance of flavors. The pizza is typically baked in a hot oven until the crust becomes golden brown and crispy, and the cheese is melted and bubbly. The aroma that fills the room as the pizza bakes is absolutely heavenly, making it even more difficult to resist. When served, Crazy Pepperoni Pizza is often cut into triangular slices, making it easy to pick up and enjoy. It is the perfect choice for pizza lovers who crave a spicy kick and enjoy the classic combination of pepperoni and cheese. Whether you're sharing it with friends at a party or enjoying it by yourself, Crazy Pepperoni Pizza is a delicious and satisfying treat that will leave you craving for more. "
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+      "name": "Pepperoni",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [17, 24, 31],
+      "category": 1,
+      "rating": 9,
+      "description": "Crazy Pepperoni Pizza is an irresistible and flavorful pizza that is sure to tantalize your taste buds. It is a popular variation of the classic pepperoni pizza, but with an added twist of excitement and spiciness. The Crazy Pepperoni Pizza starts with a deliciously crispy and thin pizza crust, which serves as the perfect base for the mouthwatering toppings. The star of the show is the generous amount of pepperoni that covers the entire pizza. The pepperoni slices are sliced thin and are full of smoky, savory flavors, giving each bite a burst of spiciness. To enhance the flavor profile, Crazy Pepperoni Pizza is often topped with a variety of additional ingredients. These can include shredded mozzarella cheese, which melts into gooey perfection, adding a creamy and indulgent texture to the pizza. Some versions may also include diced onions, bell peppers, or black olives, providing a delightful balance of flavors. The pizza is typically baked in a hot oven until the crust becomes golden brown and crispy, and the cheese is melted and bubbly. The aroma that fills the room as the pizza bakes is absolutely heavenly, making it even more difficult to resist. When served, Crazy Pepperoni Pizza is often cut into triangular slices, making it easy to pick up and enjoy. It is the perfect choice for pizza lovers who crave a spicy kick and enjoy the classic combination of pepperoni and cheese. Whether you're sharing it with friends at a party or enjoying it by yourself, Crazy Pepperoni Pizza is a delicious and satisfying treat that will leave you craving for more. "
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+      "name": "Margherita",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [19, 22, 27],
+      "category": 4,
+      "rating": 10,
+      "description": "Margherita pizza is a classic and beloved Italian dish that showcases simplicity and the natural flavors of fresh ingredients. Named after Queen Margherita of Italy, this pizza highlights the colors of the Italian flag with its combination of red tomatoes, white mozzarella cheese, and green basil leaves. The pizza starts with a base of traditional pizza dough, which is rolled out into a thin crust. A vibrant red tomato sauce, typically made with crushed tomatoes, olive oil, garlic, and a pinch of salt, is spread evenly over the dough, serving as the base for the toppings. Next, slices of fresh mozzarella cheese are placed on top of the sauce. The mozzarella melts beautifully when baked, creating a creamy and slightly tangy layer that adds richness to each bite. The cheese is often torn into smaller pieces and scattered over the pizza to ensure even distribution. To add a fresh and aromatic element, fresh basil leaves are then torn or scattered over the pizza. The basil provides a delightful herbal flavor that complements the other ingredients and adds a pop of green color. Once the toppings are added, the pizza is baked in a hot oven until the crust becomes golden brown and crispy, and the cheese melts to perfection. The result is a beautifully fragrant and visually appealing pizza that captures the essence of Italian cuisine. Margherita pizza is known for its harmonious combination of flavors. The sweet and tangy tomato sauce pairs perfectly with the creamy mozzarella cheese, while the basil adds a refreshing note. The simplicity of the ingredients allows each flavor to shine through, creating a delightful and satisfying culinary experience. Margherita pizza is a timeless classic that has become a favorite around the world. Its emphasis on fresh and quality ingredients, along with its balanced flavors, makes it a go-to choice for pizza enthusiasts and those seeking a taste of authentic Italian cuisine."
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
+      "name": "Four Seasons",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [26, 32, 36],
+      "category": 5,
+      "rating": 10,
+      "description": "Four Seasons Pizza, also known as Pizza Quattro Stagioni in Italian, is a delicious and visually appealing pizza that represents the four seasons of the year. It is divided into four sections, each featuring different toppings that correspond to different seasonal ingredients. The pizza begins with a base of traditional pizza dough, rolled out to create a thin or thick crust. The dough is then divided into four equal parts, creating sections for the different toppings. The first section is typically topped with sliced mushrooms, representing autumn. Mushrooms provide an earthy and savory flavor that pairs well with the other ingredients. They can be sautéed beforehand to enhance their taste and texture. The second section is adorned with artichoke hearts, symbolizing spring. Artichoke hearts offer a slightly tangy and nutty taste, adding a delightful contrast to the other toppings. They are often marinated in olive oil and herbs for extra flavor. The third section features sliced black olives, representing summer. The olives provide a briny and salty flavor that adds depth to the pizza. They can be either pitted or left whole, depending on personal preference. The fourth and final section is topped with prosciutto or ham, signifying winter. The cured meat brings a rich and savory taste to the pizza, adding a hint of saltiness. It is typically thinly sliced and placed on the pizza before baking. A layer of shredded mozzarella cheese is then sprinkled evenly over the entire pizza. The cheese melts and becomes golden and bubbly when baked, creating a deliciously gooey and creamy topping that binds all the flavors together. The pizza is baked in a hot oven until the crust turns golden brown and crispy, and the cheese is melted to perfection. The cooking process ensures that the toppings are cooked through and the flavors are well incorporated. Four Seasons Pizza is a delightful combination of flavors and textures. The distinct toppings in each section offer a diverse and complementary range of tastes. From the earthiness of mushrooms to the tanginess of artichoke hearts, the brininess of olives, and the richness of prosciutto, each bite provides a unique and satisfying experience. Four Seasons Pizza celebrates the changing seasons and the bounty of ingredients that come with them. Its visually appealing presentation and harmonious flavors make it a favorite choice for those seeking a pizza that offers a little taste of everything."
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
+      "name": "Vegetable and Mushroom 🌱",
+      "types": ["slim", "fat"],
+      "sizes": [26, 30, 40],
+      "price": [22, 27, 30],
+      "category": 5,
+      "rating": 7,
+      "description": "Vegetable and Mushroom Pizza is a flavorful and satisfying pizza that highlights the freshness and natural flavors of a variety of vegetables and mushrooms. Packed with nutritious ingredients, this pizza is a popular choice for vegetarians and veggie loveThe pizza begins with a base of traditional pizza dough, rolled out to create a thin or thick crust. A layer of tangy tomato sauce is spread evenly over the dough, serving as the base for the toppings.A medley of colorful vegetables is then added to the pizza. Common choices include sliced bell peppers (red, green, or yellow), thinly sliced red onions, zucchini, and cherry tomatoes. These vegetables not only provide vibrant colors but also contribute a variety of textures and flavors.Mushrooms play a crucial role in this pizza, adding an earthy and savory taste. Sliced mushrooms, such as cremini, button, or portobello, are commonly used. They can be sautéed beforehand to enhance their flavor and texture.To enhance the overall taste, a sprinkle of dried herbs like oregano or basil is often added. This adds a touch of herbal aroma and complements the flavors of the vegetables and mushrooms.A layer of shredded cheese, usually mozzarella, is then generously sprinkled over the pizza. The cheese melts and becomes beautifully golden and bubbly when baked, creating a creamy and gooey topping that brings all the ingredients together.The pizza is baked in a hot oven until the crust becomes golden brown and crispy, and the cheese is melted to perfection. This cooking process ensures that the flavors meld together, creating a harmonious blend of vegetable and mushroom goodnThe resulting Vegetable and Mushroom Pizza is a burst of flavors and textures. The combination of fresh vegetables and earthy mushrooms provides a delicious and satisfying eating experience. The tangy tomato sauce and melted cheese add depth and creaminess, making every bite a delight. Vegetable and Mushroom Pizza is a great choice for those seeking a vegetarian option or a pizza that celebrates the natural flavors of vegetables and mushrooms. It offers a nutritious and tasty alternative to traditional meat-based pizzas."
+    }
+  ]
+}

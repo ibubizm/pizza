@@ -1,4 +1,5 @@
 import './pizzalist.scss'
+import axios from 'axios'
 import { fetchPizzas } from '../redux/actions/pizzas'
 import { useSelector, useDispatch } from 'react-redux'
 import PizzaBlock from './pizzablock'
@@ -21,6 +22,7 @@ function Pizzalist() {
   const { sortBy, category } = useSelector(
     ({ filtersReducer }) => filtersReducer
   )
+
   const dispatch = useDispatch()
 
   const selectCategory = useCallback((index) => {
@@ -53,7 +55,11 @@ function Pizzalist() {
           prop={sortDict}
         />
       </div>
-      <h1 className="title">all pizzas</h1>
+      <h1 className="title">
+        {category === null
+          ? ' all pizzas'
+          : `all pizzas: ${categoryList[category]}`}
+      </h1>
       <div className="items">
         {isLoaded
           ? items.map((item) => (

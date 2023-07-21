@@ -39,7 +39,6 @@ const cart = (state = initialState, action) => {
         0
       )
       const count = allObjInCart.reduce((sum, obj) => obj.count + sum, 0)
-
       return {
         ...state,
         items: newItems,
@@ -48,6 +47,11 @@ const cart = (state = initialState, action) => {
       }
     }
 
+    case 'SAVED_PRODUCT':
+      return {
+        ...state,
+        ...action.payload,
+      }
     case 'REMOVE_PRODUCT':
       const objName =
         action.payload.id + '_' + action.payload.size + action.payload.dough
@@ -62,15 +66,18 @@ const cart = (state = initialState, action) => {
       }
 
       const allObjInCartTest = [].concat.apply([], Object.values(newItems))
+      console.log(allObjInCartTest)
       const priceNew = allObjInCartTest.reduce(
         (sum, obj) => obj.price * obj.count + sum,
         0
       )
 
+      const total = allObjInCartTest.reduce((sum, obj) => obj.count + sum, 0)
+
       return {
         ...state,
         items: newItems,
-        count: [].concat.apply([], Object.values(newItems)).length,
+        count: total,
         price: priceNew,
       }
     case 'SET_TOTAL_PRICE':

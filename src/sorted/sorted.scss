@@ -17,8 +17,10 @@
 
 .btn {
   &--cat {
-    background-color: rgb(231, 227, 227);
+    // transition: all ease 0.2s;
+    // background-color: rgb(231, 227, 227);
     margin-right: 5px;
+    font-size: 24px;
     color: black;
   }
 }
@@ -36,8 +38,10 @@
 }
 
 .active {
-  background-color: rgb(255, 127, 22);
-  color: #ffffff;
+  // background-color: rgb(255, 127, 22);
+  font-weight: 900;
+  text-decoration: underline;
+  // color: #ffffff;
 }
 
 .sort__popop {
@@ -49,8 +53,8 @@
     border-radius: 7px;
     text-align: center;
     padding-inline-start: 0;
-    border: 1px solid black;
-    background: #efefef;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #fff;
     &:last-child .active {
       border-radius: 7px;
     }

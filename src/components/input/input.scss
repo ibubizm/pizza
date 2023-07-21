@@ -1,0 +1,15 @@
+.auth__input {
+  position: relative;
+  padding-left: 30px;
+  border-radius: 3px;
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: darken(#fff, 10%);
+}
+
+.auth__icon {
+  position: absolute;
+  z-index: 1;
+  margin-left: 5px;
+}

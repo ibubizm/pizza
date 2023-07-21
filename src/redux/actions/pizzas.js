@@ -1,4 +1,6 @@
-import jso from '../../pizzas.json'
+import axios from 'axios'
+import { server_url } from '../../vars'
+// import jso from '../../pizzas.json'
 
 // export const fetchPizzas = (sortBy, category) => (dispatch) => {
 //   dispatch(setLoading(false))
@@ -16,7 +18,7 @@ import jso from '../../pizzas.json'
 // }
 
 const sortByPrice = (mas) => {
-  return mas.sort((a, b) => a.price - b.price)
+  return mas.sort((a, b) => a.price[0] - b.price[0])
 }
 
 const sortByName = (mas) => {
@@ -38,10 +40,12 @@ const sortByRating = (mas) => {
 //shit
 export const fetchPizzas =
   (sortBy, category = null) =>
-  (dispatch) => {
+  async (dispatch) => {
     dispatch(setLoading(false))
 
-    let json = JSON.parse(JSON.stringify(jso)).pizzas
+    const { data: json } = await axios.get(server_url + 'api/products')
+
+    // let json = JSON.parse(JSON.stringify(jso)).pizzas
 
     if (category == null && sortBy.type == 'price') {
       return dispatch(setPizzas(sortByPrice(json)))
@@ -66,7 +70,7 @@ export const fetchPizzas =
         setPizzas(
           json
             .filter((item) => item.category == category)
-            .sort((a, b) => a.price - b.price)
+            .sort((a, b) => a.price[0] - b.price[0])
         )
       )
     }
