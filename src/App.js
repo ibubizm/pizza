@@ -10,6 +10,8 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from './auth/fetch'
 import { savedProduct } from './redux/actions/cart'
+import { privatRoutes, publicRoutes } from './routes'
+import { Redirect } from 'react-router-dom'
 
 function App() {
   const dispatch = useDispatch()
@@ -28,11 +30,23 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {isAuth && <Route path="/basket" component={Basket} />}
-      <Route path="/" exact component={Pizzalist} />
-      <Route path="/registration" component={Registration} />
-      <Route path="/login" component={Login} />
-      <Route exact path="/product/:id" component={ProductDetail} />
+
+      {publicRoutes.map((route) => (
+        <Route
+          key={route.path}
+          path={route.path}
+          component={route.component}
+          {...route}
+        />
+      ))}
+      {isAuth &&
+        privatRoutes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
     </div>
   )
 }

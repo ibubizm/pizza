@@ -72,7 +72,7 @@ export const Registration = () => {
             accept="image/*, .png, .jpg"
             name="file"
           />
-          <Button className="registration__btn">registration</Button>
+          <Button className="registration__btn">login</Button>
         </form>
       </div>
     </div>

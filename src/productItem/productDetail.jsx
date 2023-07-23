@@ -23,7 +23,6 @@ export const ProductDetail = () => {
     items.forEach((i) => {
       if (i.id == id) {
         setPiz(i)
-        console.log(i)
         setCurrentSizeValue(i.sizes[0])
         setCurrentDoughValue(i.types[0])
         setCurrentPriceValue(i.price[0])
