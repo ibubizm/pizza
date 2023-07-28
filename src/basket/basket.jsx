@@ -28,14 +28,13 @@ function Basket() {
       <div className="cart">
         <div className="cart__content">
           <div className="cart__title">
-            {/* <img className="cart__logo" src={basket} alt="" /> */}
             <h2>Basket</h2>
           </div>
 
           <div className="person__cart">
             <img
               className="person__cart__img"
-              src={server_url + user.avatar}
+              src={`${server_url}avatars/${user.avatar}`}
               alt="avatar"
             />
             <div className="person__cart__data">

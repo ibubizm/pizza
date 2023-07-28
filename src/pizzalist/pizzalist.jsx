@@ -56,9 +56,7 @@ function Pizzalist() {
         />
       </div>
       <h1 className="title">
-        {category === null
-          ? ' all pizzas'
-          : `all pizzas: ${categoryList[category]}`}
+        {category === null ? ' all pizzas' : categoryList[category]}
       </h1>
       <div className="items">
         {isLoaded

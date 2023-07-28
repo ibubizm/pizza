@@ -41,7 +41,7 @@ export const Login = () => {
             type="password"
             placeholder={'password'}
           />
-          <Button className="registration__btn">registration</Button>
+          <Button className="registration__btn">login</Button>
         </form>
       </div>
     </div>
