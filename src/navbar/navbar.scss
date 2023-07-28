@@ -4,9 +4,7 @@
   align-items: center;
   text-decoration: none;
   justify-content: space-between;
-  // padding: 10px 0;
   height: 55px;
-  // border-bottom: 1px solid $gray;
 }
 
 .hz {
@@ -20,6 +18,11 @@
   &__left {
     display: flex;
     height: 100%;
+    align-items: center;
+
+    img {
+      height: 100%;
+    }
   }
 
   &__right {
@@ -37,7 +40,7 @@
 
 .nav__subtitle {
   font-size: 14px;
-  font-family: 'Crete Round', serif;
+  font-family: 'Crete Round', 'Montserrat' serif;
   opacity: 0.7;
 }
 
@@ -76,9 +79,6 @@
 }
 
 @media (max-width: 500px) {
-  .header {
-    padding: 15px;
-  }
   .nav__elements {
     width: auto;
   }

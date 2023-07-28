@@ -52,7 +52,7 @@ function CartItem({
               </div>
             </div>
             <div className="count__buttons">
-              <button onClick={() => dec(item)} className="circle__btn">
+              <button onClick={() => dec(item)} className="circle__btn minus">
                 -
               </button>
               <div className="count">
@@ -60,7 +60,7 @@ function CartItem({
               </div>
               <button
                 onClick={() => dispatch(addObjToCart(item))}
-                className="circle__btn"
+                className="circle__btn plus"
               >
                 +
               </button>
@@ -69,7 +69,6 @@ function CartItem({
               {Number(item.price * item.count).toFixed(2)}BYN
             </div>
             <button onClick={() => onClickDel(item)} className="close__btn">
-              {/* <img className="close" src={closeImg} alt="" /> */}
               <BsTrash />
             </button>
           </div>
