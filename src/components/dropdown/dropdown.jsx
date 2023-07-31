@@ -33,7 +33,7 @@ const DropDown = memo(function DropDown({ img, prop }) {
   }, [])
 
   return (
-    <div ref={ref} className="sort">
+    <div ref={ref} className="">
       <img className="nav__avatar" src={img} onClick={togleVisiblePoPop} />
       {visiblePoPop && (
         <div className="sort__popop">

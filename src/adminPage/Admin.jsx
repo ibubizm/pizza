@@ -86,7 +86,6 @@ export const Admin = () => {
     form.append('category', product.category)
     form.append('rating', product.rating)
     form.append('description', product.description)
-    // setProduct({ ...product, sizes, types, price })
     createProduct(form)
   }
 
@@ -106,6 +105,7 @@ export const Admin = () => {
             obj={product}
             onChange={setProduct}
             placeholder={'name of product'}
+            icon={'pizza'}
           />
           <div className="checkbox">
             {dough.map((i, index) => (

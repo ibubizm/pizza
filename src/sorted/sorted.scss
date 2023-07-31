@@ -47,6 +47,7 @@
 .sort__popop {
   ul {
     position: absolute;
+    z-index: 100;
     margin-top: 20px;
     right: 50px;
     list-style: none;

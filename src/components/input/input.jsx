@@ -5,6 +5,7 @@ import {
   MdOutlineAttachMoney,
 } from 'react-icons/md'
 import { AiOutlineUnlock, AiOutlinePhone, AiOutlineUser } from 'react-icons/ai'
+import { CiPizza } from 'react-icons/ci'
 
 export const Input = ({
   placeholder,
@@ -28,6 +29,8 @@ export const Input = ({
         return <MdOutlineImage className="auth__icon" />
       case 'money':
         return <MdOutlineAttachMoney className="auth__icon" />
+      case 'pizza':
+        return <CiPizza className="auth__icon" />
 
       default:
         break

@@ -45,13 +45,13 @@
 }
 
 .nav__title {
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Montserrat', cursive;
   font-size: 22px;
 }
 
 .nav__subtitle {
   font-size: 14px;
-  font-family: 'Crete Round', 'Montserrat' serif;
+  font-family: 'Crete Round', serif;
   opacity: 0.7;
 }
 
@@ -91,17 +91,29 @@
 
 @media (max-width: 500px) {
   .nav {
-    img {
+    // &__logo {
+    //   display: none;
+    // }
+
+    &__subtitle {
       display: none;
+    }
+
+    &__right {
+      gap: 0;
     }
   }
   .nav__elements {
     width: auto;
   }
   .nav__title {
-    font-size: 16px;
+    font-size: 15px;
   }
   .basket__btn {
     padding: 10px 0;
+  }
+
+  .right__basket {
+    padding: 6px;
   }
 }

@@ -2,13 +2,12 @@ import React from 'react'
 import logo from './logo_pizza.svg'
 import basket from './basket.svg'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import './navbar.scss'
-import { server_url } from '../vars'
 import DropDown from '../components/dropdown/dropdown'
 import { getAvatar } from '../helpers/helpers'
 
-const test = [
+const props = [
   { name: 'admin panel', link: '/admin', status: true },
   { name: 'history', link: '/history', status: false },
 ]
@@ -22,7 +21,7 @@ function Navbar() {
       <div className="header">
         <Link to="/" className="hz">
           <div className="nav__left">
-            <img src={logo} alt="" />
+            <img className="nav__logo" src={logo} alt="" />
             <div className="nav__elements">
               <div className="nav__title">Ibubizm Pizza</div>
               <div className="nav__subtitle">just better</div>
@@ -42,7 +41,7 @@ function Navbar() {
                 </div>
               </div>
             </Link>
-            <DropDown img={getAvatar(currentUser.avatar)} prop={test} />
+            <DropDown img={getAvatar(currentUser.avatar)} prop={props} />
           </div>
         ) : (
           <div className="basket__btn">
