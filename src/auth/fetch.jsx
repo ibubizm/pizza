@@ -46,3 +46,7 @@ export const auth = () => {
     }
   }
 }
+
+export const createProduct = async (form) => {
+  await axios.post(server_url + 'api/create', form)
+}

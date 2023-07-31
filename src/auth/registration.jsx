@@ -35,35 +35,39 @@ export const Registration = () => {
   return (
     <div className="wrapper">
       <div className="form__content">
-        {/* {ava ? <img src={ava} alt="" /> : ''} */}
+        {ava ? <img src={ava} alt="" /> : ''}
         <h1 className="form__title">registration</h1>
         <form onSubmit={submitForm}>
           <Input
             icon="name"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="text"
+            fieldName={'name'}
             placeholder={'name'}
           />
           <Input
             icon="email"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="email"
+            fieldName={'email'}
             placeholder={'email'}
           />
           <Input
             icon="lock"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="password"
+            fieldName={'password'}
             placeholder={'password'}
           />
           <Input
             icon="phone"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="text"
+            fieldName={'phoneNumber'}
             placeholder={'phoneNumber'}
           />
           <input
@@ -72,7 +76,7 @@ export const Registration = () => {
             accept="image/*, .png, .jpg"
             name="file"
           />
-          <Button className="registration__btn">login</Button>
+          <Button className="registration__btn">registration</Button>
         </form>
       </div>
     </div>

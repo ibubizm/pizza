@@ -44,9 +44,6 @@ export const fetchPizzas =
     dispatch(setLoading(false))
 
     const { data: json } = await axios.get(server_url + 'api/products')
-
-    // let json = JSON.parse(JSON.stringify(jso)).pizzas
-
     if (category == null && sortBy.type == 'price') {
       return dispatch(setPizzas(sortByPrice(json)))
     }

@@ -1,4 +1,5 @@
 @import '../styles/vars.scss';
+
 .header {
   display: flex;
   align-items: center;
@@ -27,6 +28,16 @@
 
   &__right {
     display: flex;
+    height: 100%;
+    gap: 20px;
+    align-items: center;
+  }
+  &__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    cursor: pointer;
   }
 }
 .nav__elements {
@@ -79,6 +90,11 @@
 }
 
 @media (max-width: 500px) {
+  .nav {
+    img {
+      display: none;
+    }
+  }
   .nav__elements {
     width: auto;
   }

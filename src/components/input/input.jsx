@@ -1,9 +1,20 @@
 import './input.scss'
-import { MdAlternateEmail } from 'react-icons/md'
+import {
+  MdAlternateEmail,
+  MdOutlineImage,
+  MdOutlineAttachMoney,
+} from 'react-icons/md'
 import { AiOutlineUnlock, AiOutlinePhone, AiOutlineUser } from 'react-icons/ai'
 
-export const Input = ({ placeholder, icon, user, onChange, ...props }) => {
-  const ass = () => {
+export const Input = ({
+  placeholder,
+  icon,
+  obj,
+  onChange,
+  fieldName,
+  ...props
+}) => {
+  const setIcon = () => {
     switch (icon) {
       case 'email':
         return <MdAlternateEmail className="auth__icon" />
@@ -13,6 +24,10 @@ export const Input = ({ placeholder, icon, user, onChange, ...props }) => {
         return <AiOutlinePhone className="auth__icon" />
       case 'name':
         return <AiOutlineUser className="auth__icon" />
+      case 'image':
+        return <MdOutlineImage className="auth__icon" />
+      case 'money':
+        return <MdOutlineAttachMoney className="auth__icon" />
 
       default:
         break
@@ -20,9 +35,9 @@ export const Input = ({ placeholder, icon, user, onChange, ...props }) => {
   }
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-      {ass()}
+      {setIcon()}
       <input
-        onChange={(e) => onChange({ ...user, [placeholder]: e.target.value })}
+        onChange={(e) => onChange({ ...obj, [fieldName]: e.target.value })}
         className={`auth__input ${icon}`}
         placeholder={placeholder}
         {...props}

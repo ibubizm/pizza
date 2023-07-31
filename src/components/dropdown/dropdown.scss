@@ -1,0 +1,10 @@
+@import '../../styles/vars.scss';
+
+.dropdown {
+  &__item {
+    &:hover {
+      background-color: $gray;
+      border-radius: 7px;
+    }
+  }
+}

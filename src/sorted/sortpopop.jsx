@@ -36,7 +36,11 @@ const SortPoPop = memo(function SortPoPop({ prop, onClickSort, activeSortBy }) {
               prop.map((obj, index) => (
                 <li
                   onClick={() => activeItem(obj)}
-                  className={activeSortBy === obj.name ? 'active' : ''}
+                  className={
+                    activeSortBy === obj.name
+                      ? 'dropdown__item active'
+                      : 'dropdown__item'
+                  }
                   key={`${obj.name}_${index}`}
                 >
                   {obj.name}

@@ -29,16 +29,18 @@ export const Login = () => {
         <form onSubmit={submitForm}>
           <Input
             icon="email"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="email"
+            fieldName={'email'}
             placeholder={'email'}
           />
           <Input
             icon="lock"
-            user={user}
+            obj={user}
             onChange={setUser}
             type="password"
+            fieldName={'password'}
             placeholder={'password'}
           />
           <Button className="registration__btn">login</Button>

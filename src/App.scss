@@ -6,12 +6,9 @@
 
 * {
   box-sizing: border-box;
-  // margin: 0;
-  // padding: 0;
 }
 
 body {
-  // font-family: 'Balsamiq Sans', cursive;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -32,11 +29,9 @@ a {
 }
 
 .btn {
-  // border-radius: 20px;
   font-family: inherit;
   border: none;
   padding: 10px 20px;
-  // background-color: $orange;
 
   color: #fff;
   outline: none;
@@ -46,13 +41,17 @@ a {
     font-family: inherit;
     background-color: $blue;
     border-radius: 5px;
-    // border: 2px solid $orange;
     font-weight: 700;
-    // color: $orange;
-    // background-color: inherit;
+
     &:hover {
       background-color: lighten($blue, 10%);
       color: #fff;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 20px;
   }
 }

@@ -1,22 +1,17 @@
 import { Route } from 'react-router-dom'
 import './App.scss'
 import Navbar from './navbar/navbar'
-import Pizzalist from './pizzalist/pizzalist'
-import Basket from './basket/basket'
-import { ProductDetail } from './productItem/productDetail'
-import { Registration } from './auth/registration'
-import { Login } from './auth/login'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from './auth/fetch'
 import { savedProduct } from './redux/actions/cart'
 import { privatRoutes, publicRoutes } from './routes'
-import { Redirect } from 'react-router-dom'
+import { Admin } from './adminPage/Admin'
 
 function App() {
   const dispatch = useDispatch()
   const basketItem = useSelector(({ cartReducer }) => cartReducer)
-  const { isAuth } = useSelector(({ userReducer }) => userReducer)
+  const { isAuth, currentUser } = useSelector(({ userReducer }) => userReducer)
 
   useEffect(() => {
     dispatch(auth())
@@ -47,6 +42,9 @@ function App() {
             component={route.component}
           />
         ))}
+      {isAuth && currentUser.status && (
+        <Route path={'/admin'} component={Admin} />
+      )}
     </div>
   )
 }
