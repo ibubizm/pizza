@@ -1,12 +1,10 @@
 import './productDetail.scss'
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {
-  useHistory,
-  useParams,
-} from 'react-router-dom/cjs/react-router-dom.min'
+import { useDispatch } from 'react-redux'
+import { useHistory, useParams } from 'react-router-dom'
 import { addObjToCart } from '../redux/actions/cart'
 import { Button } from '../components/button/button'
+import { getOneProduct } from '../auth/fetch'
 
 export const ProductDetail = () => {
   const { id } = useParams()
@@ -15,24 +13,21 @@ export const ProductDetail = () => {
   const [currentDoughValue, setCurrentDoughValue] = useState()
   const [currentSizeValue, setCurrentSizeValue] = useState()
   const [currentPriceValue, setCurrentPriceValue] = useState()
-  const { items } = useSelector(({ pizzasReducer }) => pizzasReducer)
   const dispatch = useDispatch()
   const history = useHistory()
 
   useEffect(() => {
-    items.forEach((i) => {
-      if (i.id == id) {
-        setPiz(i)
-        setCurrentSizeValue(i.sizes[0])
-        setCurrentDoughValue(i.types[0])
-        setCurrentPriceValue(i.price[0])
-      }
+    getOneProduct(id).then(({ data }) => {
+      setPiz(data)
+      setCurrentSizeValue(data.sizes[0])
+      setCurrentDoughValue(data.types[0])
+      setCurrentPriceValue(data.price[0])
     })
   }, [])
 
   const addToCart = () => {
     const obj = {
-      id: piz.id,
+      id: piz._id,
       name: piz.name,
       img: piz.imageUrl,
       size: currentSizeValue,
@@ -71,25 +66,27 @@ export const ProductDetail = () => {
                 onChange={toggleSize}
                 name="size"
               >
-                {piz.sizes.map((i, index) => (
+                {piz.sizes.map((i) => (
                   <option key={i} value={i}>
                     {i}
                   </option>
                 ))}
               </select>
-              <select
-                value={currentDoughValue}
-                onChange={(e) => {
-                  setCurrentDoughValue(e.target.value)
-                }}
-                name="dough"
-              >
-                {piz.types.map((i) => (
-                  <option key={i} value={i}>
-                    {i}
-                  </option>
-                ))}
-              </select>
+              {piz.types !== 0 && (
+                <select
+                  value={currentDoughValue}
+                  onChange={(e) => {
+                    setCurrentDoughValue(e.target.value)
+                  }}
+                  name="dough"
+                >
+                  {piz.types.map((i) => (
+                    <option key={i} value={i}>
+                      {i}
+                    </option>
+                  ))}
+                </select>
+              )}
               <span>{currentPriceValue}BYN</span>
               <Button onClick={addToCart}>add</Button>
             </div>

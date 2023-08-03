@@ -1,29 +1,8 @@
-import jso from '../../pizzas.json'
-
-const json = JSON.parse(JSON.stringify(jso)).pizzas
-
 const initialState = {
-  items: [...json],
+  items: [],
   isLoaded: false,
 }
 
-// const pizzas = (state = initialState, action) =>{
-//     if(action.type === 'SET_PIZZAS'){
-//         return{
-//             ...state,
-//             items: action.payload,
-//             isLoaded : true
-//         }
-//     }
-//     if(action.type === 'SET_LOADING'){
-//         return{
-//             ...state,
-//             isLoaded : action.payload,
-
-//         }
-//     }
-//     return state
-// }
 const pizzas = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PIZZAS':

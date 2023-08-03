@@ -1,17 +1,8 @@
-import closeImg from '../styles/close.svg'
-import trashImg from '../styles/delete.svg'
 import { addObjToCart, decrementItem } from '../redux/actions/cart'
 import { useDispatch } from 'react-redux'
 import { BsTrash } from 'react-icons/bs'
 
-function CartItem({
-  user,
-  basketItems,
-  onClickDel,
-  onClickClean,
-  price,
-  count,
-}) {
+function CartItem({ basketItems, onClickDel, price, count }) {
   const dispatch = useDispatch()
 
   const dec = (obj) => {
@@ -21,12 +12,6 @@ function CartItem({
   }
   return (
     <div className="basket__items">
-      {/* <div className="clean__div">
-        <button onClick={onClickClean} className="clean_cart">
-          <img className="trash__img" src={trashImg} alt="" />
-          clean
-        </button>
-      </div> */}
       {basketItems == 0 ? (
         <div className="ass">
           <h1 className="empty__h1">basket is empty</h1>
@@ -47,7 +32,9 @@ function CartItem({
               <div className="item__content">
                 <strong>{item.name}</strong>
                 <div className="item__subtitle">
-                  {`${item.dough}, ${item.size}cm`}
+                  {item.dough
+                    ? item.dough + ' ' + item.size + 'cm'
+                    : item.size + 'L'}
                 </div>
               </div>
             </div>

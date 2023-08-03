@@ -3,9 +3,6 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import CartItem from './cart_item'
 import { cleanCart, delFromCart } from '../redux/actions/cart'
-import { server_url } from '../vars'
-import { useEffect, useState } from 'react'
-import { AiOutlineUser } from 'react-icons/ai'
 import { getAvatar } from '../helpers/helpers'
 
 function Basket() {
@@ -13,7 +10,6 @@ function Basket() {
   const { price, count } = useSelector(({ cartReducer }) => cartReducer)
   const { currentUser: user } = useSelector(({ userReducer }) => userReducer)
   const basketItems = [].concat.apply([], Object.values(basketItem))
-  const [avatar, setAvatar] = useState('')
 
   const dispatch = useDispatch()
 
@@ -27,21 +23,6 @@ function Basket() {
     dispatch(delFromCart(obj))
   }
 
-  // const getAvatar = () => {
-  //   if (user.avatar != '') {
-  //     setAvatar(`${server_url}avatars/${user.avatar}`)
-  //   } else {
-  //     setAvatar(
-  //       'https://m.media-amazon.com/images/I/61hpdSzdo6L._UF894,1000_QL80_.jpg'
-  //     )
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   // getAvatar()
-  //   getAvatar(user.avatar)
-  // }, [])
-
   return (
     <div className="container">
       <div className="cart">
@@ -51,7 +32,6 @@ function Basket() {
           </div>
 
           <div className="person__cart">
-            {}
             <img
               className="person__cart__img"
               src={getAvatar(user.avatar)}

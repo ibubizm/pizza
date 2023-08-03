@@ -1,46 +1,25 @@
+import './admin.scss'
 import { useState } from 'react'
 import { Checkbox } from '../components/checkbox/checkbox'
 import { Input } from '../components/input/input'
 import { Button } from '../components/button/button'
-import './admin.scss'
 import { createProduct } from '../auth/fetch'
-
-const sizesList = [
-  {
-    price: 0,
-    name: 23,
-    checked: false,
-  },
-  {
-    price: 0,
-    name: 30,
-    checked: false,
-  },
-  {
-    price: 0,
-    name: 40,
-    checked: false,
-  },
-]
-
-const doughList = [
-  { name: 'slim', checked: false },
-  { name: 'fat', checked: false },
-]
+import {
+  defaultProduct,
+  doughList,
+  sizesList,
+  category,
+  drinkSize,
+} from './props'
+import { useHistory } from 'react-router-dom'
 
 export const Admin = () => {
-  const [product, setProduct] = useState({
-    imageUrl: '',
-    name: '',
-    types: [],
-    sizes: [],
-    price: [],
-    category: 0,
-    rating: 5,
-    description: '',
-  })
+  const [product, setProduct] = useState(defaultProduct)
   const [toppings, setToppings] = useState(sizesList)
+  const [drink, setDrink] = useState(drinkSize)
   const [dough, setDough] = useState(doughList)
+
+  const history = useHistory()
 
   const updateCheckStatus = (setter, list, index) => {
     setter(
@@ -52,32 +31,84 @@ export const Admin = () => {
     )
   }
 
-  const updatePrice = (e, index) => {
+  const updatePrice = (e, index, list, setter) => {
     console.log(e.target.value)
-    setToppings(
-      toppings.map((topping, currentIndex) =>
-        currentIndex === index ? { ...topping, price: e.target.value } : topping
+    setter(
+      list.map((list, currentIndex) =>
+        currentIndex === index ? { ...list, price: e.target.value } : list
       )
     )
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    const form = new FormData()
+  const priceBlock = (list, setter) => {
+    return (
+      <div>
+        {list.map((i, index) => {
+          if (i.checked)
+            return (
+              <input
+                className="auth__input auth__input__gap"
+                key={i.name}
+                onChange={(e) => updatePrice(e, index, list, setter)}
+                placeholder={`price for ${i.name}`}
+              />
+            )
+        })}
+      </div>
+    )
+  }
+
+  const checkboxBlock = (list, setter) => {
+    return (
+      <div className="checkbox">
+        {list.map((i, index) => (
+          <Checkbox
+            key={i.name}
+            isChecked={i.checked}
+            label={i.name}
+            checkHandler={() => updateCheckStatus(setter, list, index)}
+            index={index}
+          />
+        ))}
+      </div>
+    )
+  }
+  const checkCategory = () => {
     let sizes = []
     let types = []
     let price = []
-    toppings.forEach((i) => {
-      if (i.checked) {
-        sizes.push(Number(i.name))
-        price.push(Number(i.price))
-      }
-    })
-    dough.forEach((i) => {
-      if (i.checked) {
-        types.push(i.name)
-      }
-    })
+    switch (product.category) {
+      case '4':
+        drink.map((i) => {
+          if (i.checked) {
+            sizes.push(i.name)
+            price.push(Number(i.price))
+            types = []
+          }
+        })
+        return [sizes, types, price]
+
+      default:
+        toppings.map((i) => {
+          if (i.checked) {
+            sizes.push(i.name)
+            price.push(Number(i.price))
+            types = []
+          }
+        })
+        dough.map((i) => {
+          if (i.checked) {
+            types.push(i.name)
+          }
+        })
+        return [sizes, types, price]
+    }
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const [sizes, types, price] = checkCategory()
+    const form = new FormData()
     form.append('imageUrl', product.imageUrl)
     form.append('name', product.name)
     form.append('types', types)
@@ -86,7 +117,9 @@ export const Admin = () => {
     form.append('category', product.category)
     form.append('rating', product.rating)
     form.append('description', product.description)
+
     createProduct(form)
+    history.push('/')
   }
 
   return (
@@ -107,43 +140,6 @@ export const Admin = () => {
             placeholder={'name of product'}
             icon={'pizza'}
           />
-          <div className="checkbox">
-            {dough.map((i, index) => (
-              <Checkbox
-                key={i.name}
-                isChecked={i.checked}
-                label={i.name}
-                checkHandler={() => updateCheckStatus(setDough, dough, index)}
-                index={index}
-              />
-            ))}
-          </div>
-          <div className="checkbox">
-            {toppings.map((i, index) => (
-              <Checkbox
-                key={i.name}
-                isChecked={i.checked}
-                label={i.name}
-                checkHandler={() =>
-                  updateCheckStatus(setToppings, toppings, index)
-                }
-                index={index}
-              />
-            ))}
-          </div>
-
-          {toppings.map((i, index) => {
-            if (i.checked)
-              return (
-                <input
-                  key={i.name}
-                  onChange={(e) => updatePrice(e, index)}
-                  // fieldName={'price'}
-                  placeholder={`price for ${i.name}`}
-                  // icon={'money'}
-                />
-              )
-          })}
           <select
             value={product.category}
             onChange={(e) =>
@@ -152,11 +148,24 @@ export const Admin = () => {
             name="category"
             id="category"
           >
-            <option value="0">grill</option>
-            <option value="1">closed</option>
-            <option value="2">spicy</option>
-            <option value="3">vegan</option>
+            {category.map((cat) => (
+              <option key={cat.name} value={cat.value}>
+                {cat.name}
+              </option>
+            ))}
           </select>
+          {product.category !== '4' ? (
+            <>
+              {checkboxBlock(dough, setDough)}
+              {checkboxBlock(toppings, setToppings)}
+              {priceBlock(toppings, setToppings)}
+            </>
+          ) : (
+            <>
+              {checkboxBlock(drink, setDrink)}
+              {priceBlock(drink, setDrink)}
+            </>
+          )}
           <textarea
             type="textarea"
             placeholder={'description'}

@@ -66,7 +66,6 @@ const cart = (state = initialState, action) => {
       }
 
       const allObjInCartTest = [].concat.apply([], Object.values(newItems))
-      console.log(allObjInCartTest)
       const priceNew = allObjInCartTest.reduce(
         (sum, obj) => obj.price * obj.count + sum,
         0

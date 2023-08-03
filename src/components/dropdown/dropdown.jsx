@@ -42,7 +42,7 @@ const DropDown = memo(function DropDown({ img, prop }) {
 
             {prop &&
               prop.map((obj, index) => (
-                <>
+                <div key={obj.link}>
                   {!obj.status && (
                     <Link to={obj.link}>
                       <li
@@ -63,7 +63,7 @@ const DropDown = memo(function DropDown({ img, prop }) {
                       </li>
                     </Link>
                   )}
-                </>
+                </div>
               ))}
             <li className={'dropdown__item'} onClick={logoutClick}>
               logout

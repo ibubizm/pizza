@@ -1,5 +1,4 @@
 import './pizzalist.scss'
-import axios from 'axios'
 import { fetchPizzas } from '../redux/actions/pizzas'
 import { useSelector, useDispatch } from 'react-redux'
 import PizzaBlock from './pizzablock'
@@ -10,10 +9,10 @@ import { setCategory, setSortPoPop } from '../redux/actions/filters'
 import LoadingPizzas from './loadingPizzas'
 import { addObjToCart } from '../redux/actions/cart'
 
-const categoryList = ['grill', 'closed', 'spicy', 'vegan']
+const categoryList = ['grill', 'classic', 'spicy', 'vegan', 'drink']
 const sortDict = [
-  { name: 'popular', type: 'rating' },
   { name: 'alphabet', type: 'name' },
+  { name: 'popular', type: 'rating' },
   { name: 'price', type: 'price' },
 ]
 

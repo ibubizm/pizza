@@ -1,21 +1,5 @@
 import axios from 'axios'
 import { server_url } from '../../vars'
-// import jso from '../../pizzas.json'
-
-// export const fetchPizzas = (sortBy, category) => (dispatch) => {
-//   dispatch(setLoading(false))
-//   fetch(
-//     `/pizzas?${category != null ? `category=${category}` : ''}&_sort=${
-//       sortBy.type
-//     }`
-//   )
-//     .then((resp) => resp.json())
-//     .then((json) => {
-//       dispatch(setPizzas(json))
-//       console.log(JSON.parse(JSON.stringify(jso)).pizzas)
-//       console.log(json)
-//     })
-// }
 
 const sortByPrice = (mas) => {
   return mas.sort((a, b) => a.price[0] - b.price[0])

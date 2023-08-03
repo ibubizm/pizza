@@ -4,13 +4,11 @@ import { server_url } from '../vars'
 
 export const registration = async (forma) => {
   try {
-    const response = await axios.post(server_url + 'auth/registration', forma, {
+    await axios.post(server_url + 'auth/registration', forma, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     })
-
-    console.log(response)
   } catch (e) {
     console.log(e)
   }
@@ -48,5 +46,17 @@ export const auth = () => {
 }
 
 export const createProduct = async (form) => {
+  console.log(form)
   await axios.post(server_url + 'api/create', form)
+}
+
+export const getOneProduct = async (id) => {
+  try {
+    const res = await axios.get(server_url + `api/products/${id}`, {
+      params: { id },
+    })
+    return res
+  } catch (e) {
+    console.log(e)
+  }
 }
