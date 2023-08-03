@@ -57,7 +57,7 @@ export const ProductDetail = () => {
             </span>
             <img src={piz.imageUrl} alt="" />
           </div>
-          <div>
+          <div className="detail__page__content">
             <h2>{piz.name}</h2>
             <p>{piz.description}</p>
             <div className="detail__page__options">
@@ -72,7 +72,7 @@ export const ProductDetail = () => {
                   </option>
                 ))}
               </select>
-              {piz.types !== 0 && (
+              {piz.types.length !== 0 && (
                 <select
                   value={currentDoughValue}
                   onChange={(e) => {

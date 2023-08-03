@@ -12,7 +12,7 @@
 
 .item {
   display: grid;
-  grid-template-rows: 1fr auto 120px auto;
+  grid-template-rows: 1fr 120px auto;
   font-family: 'Balsamiq Sans', cursive;
   margin: 15px;
   padding: 10px;
@@ -84,6 +84,7 @@
 
 .price__add {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 10px;
 }
@@ -97,7 +98,6 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
   .item {
-    grid-template-columns: 1fr 1fr 1fr;
     img {
       display: flex;
       width: 90%;

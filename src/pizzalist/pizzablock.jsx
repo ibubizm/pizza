@@ -23,8 +23,8 @@ function PizzaBlock({ pop, onClickAdd }) {
 
   return (
     <>
-      <img className="item__image" src={pop.imageUrl} alt="" />
       <Link className="item__name" to={`product/${pop._id}`}>
+        <img className="item__image" src={pop.imageUrl} alt="" />
         {pop.name}
       </Link>
       <div className="switcher">

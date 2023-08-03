@@ -6,6 +6,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
+
+  &__content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
   img {
     width: 100%;
   }
