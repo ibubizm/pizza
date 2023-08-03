@@ -11,6 +11,8 @@
 }
 
 .item {
+  display: grid;
+  grid-template-rows: 1fr auto 120px auto;
   font-family: 'Balsamiq Sans', cursive;
   margin: 15px;
   padding: 10px;
