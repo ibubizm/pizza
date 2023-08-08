@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import PizzaBlock from './pizzablock'
 import SortPoPop from '../sorted/sortpopop'
 import Sorted from '../sorted/sorted'
-import { useCallback, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { setCategory, setSortPoPop } from '../redux/actions/filters'
 import LoadingPizzas from './loadingPizzas'
 import { addObjToCart } from '../redux/actions/cart'
@@ -16,12 +16,11 @@ const sortDict = [
   { name: 'price', type: 'price' },
 ]
 
-function Pizzalist() {
+const PizzaList = memo(() => {
   const { items, isLoaded } = useSelector(({ pizzasReducer }) => pizzasReducer)
   const { sortBy, category } = useSelector(
     ({ filtersReducer }) => filtersReducer
   )
-
   const dispatch = useDispatch()
 
   const selectCategory = useCallback((index) => {
@@ -60,16 +59,7 @@ function Pizzalist() {
       <div className="items">
         {isLoaded
           ? items.map((item) => (
-              <div
-                key={`${item.name}_${item.id}_${new Date().getTime()}`}
-                className="item"
-              >
-                <PizzaBlock
-                  onClickAdd={addToCart}
-                  key={`${item.name}_${item.id}_${new Date().getTime()}`}
-                  pop={item}
-                />
-              </div>
+              <PizzaBlock onClickAdd={addToCart} key={item._id} pop={item} />
             ))
           : Array(10)
               .fill(0)
@@ -81,6 +71,6 @@ function Pizzalist() {
       </div>
     </div>
   )
-}
+})
 
-export default Pizzalist
+export default PizzaList

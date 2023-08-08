@@ -25,7 +25,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
       {publicRoutes.map((route) => (
         <Route
           key={route.path}

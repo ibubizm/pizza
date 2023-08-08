@@ -26,18 +26,17 @@ export const fetchPizzas =
   (sortBy, category = null) =>
   async (dispatch) => {
     dispatch(setLoading(false))
-
     const { data: json } = await axios.get(server_url + 'api/products')
-    if (category == null && sortBy.type == 'price') {
+    if (category == null && sortBy.type === 'price') {
       return dispatch(setPizzas(sortByPrice(json)))
     }
-    if (category == null && sortBy.type == 'name') {
+    if (category == null && sortBy.type === 'name') {
       return dispatch(setPizzas(sortByName(json)))
     }
-    if (category == null && sortBy.type == 'rating') {
+    if (category == null && sortBy.type === 'rating') {
       return dispatch(setPizzas(sortByRating(json)))
     }
-    if (sortBy.type == 'rating') {
+    if (sortBy.type === 'rating') {
       return dispatch(
         setPizzas(
           json
@@ -46,7 +45,7 @@ export const fetchPizzas =
         )
       )
     }
-    if (sortBy.type == 'price') {
+    if (sortBy.type === 'price') {
       return dispatch(
         setPizzas(
           json
@@ -56,7 +55,7 @@ export const fetchPizzas =
       )
     }
 
-    if (sortBy.type == 'name') {
+    if (sortBy.type === 'name') {
       return dispatch(
         setPizzas(
           json

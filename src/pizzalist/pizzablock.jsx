@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
-function PizzaBlock({ pop, onClickAdd }) {
+const PizzaBlock = memo(({ pop, onClickAdd }) => {
   const [currentDoughIndex, setCurrentDoughIndex] = useState(0)
   const [currentDoughValue, setCurrentDoughValue] = useState(pop.types[0])
   const [currentSizeIndex, setCurrentSizeIndex] = useState(0)
@@ -22,7 +22,7 @@ function PizzaBlock({ pop, onClickAdd }) {
   }
 
   return (
-    <>
+    <div className="item">
       <Link className="item__name" to={`product/${pop._id}`}>
         <img className="item__image" src={pop.imageUrl} alt="" />
         {pop.name}
@@ -74,8 +74,8 @@ function PizzaBlock({ pop, onClickAdd }) {
           +Add
         </button>
       </div>
-    </>
+    </div>
   )
-}
+})
 
 export default PizzaBlock
