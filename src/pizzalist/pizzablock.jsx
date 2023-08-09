@@ -1,5 +1,6 @@
 import { memo, useState } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { AddToCartButton } from '../components/button/addToCartButton'
 
 const PizzaBlock = memo(({ pop, onClickAdd }) => {
   const [currentDoughIndex, setCurrentDoughIndex] = useState(0)
@@ -7,6 +8,7 @@ const PizzaBlock = memo(({ pop, onClickAdd }) => {
   const [currentSizeIndex, setCurrentSizeIndex] = useState(0)
   const [currentSizeValue, setCurrentSizeValue] = useState(pop.sizes[0])
   const [currentPriceValue, setCurrentPriceValue] = useState(pop.price[0])
+  const [isClicked, setIsClicked] = useState(false)
 
   const addPizzas = () => {
     let obj = {
@@ -18,7 +20,15 @@ const PizzaBlock = memo(({ pop, onClickAdd }) => {
       price: currentPriceValue,
     }
     onClickAdd(obj)
+    animationFun()
     localStorage.setItem('basket', JSON.stringify(obj))
+  }
+
+  const animationFun = () => {
+    setIsClicked(true)
+    setTimeout(() => {
+      setIsClicked(false)
+    }, 1500)
   }
 
   return (
@@ -70,9 +80,7 @@ const PizzaBlock = memo(({ pop, onClickAdd }) => {
       </div>
       <div className="price__add">
         {currentPriceValue.toFixed(1)}BYN
-        <button onClick={addPizzas} className="btn btn--add">
-          +Add
-        </button>
+        <AddToCartButton isClicked={isClicked} onClick={addPizzas} />
       </div>
     </div>
   )

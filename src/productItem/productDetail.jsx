@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { addObjToCart } from '../redux/actions/cart'
 import { Button } from '../components/button/button'
 import { getOneProduct } from '../auth/fetch'
+import { AddToCartButton } from '../components/button/addToCartButton'
 
 export const ProductDetail = () => {
   const { id } = useParams()
@@ -13,6 +14,7 @@ export const ProductDetail = () => {
   const [currentDoughValue, setCurrentDoughValue] = useState()
   const [currentSizeValue, setCurrentSizeValue] = useState()
   const [currentPriceValue, setCurrentPriceValue] = useState()
+  const [isClicked, setIsClicked] = useState(false)
   const dispatch = useDispatch()
   const history = useHistory()
 
@@ -34,8 +36,15 @@ export const ProductDetail = () => {
       dough: currentDoughValue,
       price: currentPriceValue,
     }
-    console.log(obj)
+    animationFunc()
     dispatch(addObjToCart(obj))
+  }
+
+  const animationFunc = () => {
+    setIsClicked(true)
+    setTimeout(() => {
+      setIsClicked(false)
+    }, 1500)
   }
 
   const toggleSize = (e) => {
@@ -88,7 +97,8 @@ export const ProductDetail = () => {
                 </select>
               )}
               <span>{currentPriceValue}BYN</span>
-              <Button onClick={addToCart}>add</Button>
+              <AddToCartButton isClicked={isClicked} onClick={addToCart} />
+              {/* <Button onClick={addToCart}>add</Button> */}
             </div>
           </div>
         </div>

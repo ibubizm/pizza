@@ -14,3 +14,131 @@
     scale: 1.06;
   }
 }
+
+.cart__button {
+  position: relative;
+  // font-family: ;
+  width: 100px;
+  height: 40px;
+  background-color: #3f7dfb;
+  overflow: hidden;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+
+  cursor: pointer;
+  transition: 0.3 ease-in-out;
+
+  &:hover {
+    background-color: darken(#3f7dfb, 10%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.fa-shopping-cart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.fa-box {
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+.cart__button span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+
+.add__to__cart {
+  opacity: 1;
+}
+
+.added {
+  opacity: 0;
+}
+
+.cart__button.clicked .fa-shopping-cart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked .fa-box {
+  animation: box 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked .add__to__cart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+
+.cart__button.clicked .added {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+
+  40%,
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+
+  55% {
+    top: 40%;
+    left: 58%;
+  }
+
+  100% {
+    top: 40%;
+    left: 110%;
+  }
+}
+
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes txt2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
