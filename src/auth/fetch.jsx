@@ -14,7 +14,7 @@ export const registration = async (forma) => {
   }
 }
 
-export const login = ({ email, password }) => {
+export const login = (email, password) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(server_url + 'auth/login', {

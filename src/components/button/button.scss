@@ -13,6 +13,10 @@
     transition: all ease 0.2s;
     scale: 1.06;
   }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+  }
 }
 
 .cart__button {
@@ -86,9 +90,9 @@
   animation: txt1 1.5s ease-in-out forwards;
 }
 
-.cart__button.clicked .added {
-  animation: txt2 1.5s ease-in-out forwards;
-}
+// .cart__button.clicked .added {
+//   animation: txt2 1.5s ease-in-out forwards;
+// }
 
 @keyframes cart {
   0% {
@@ -133,12 +137,12 @@
   }
 }
 
-@keyframes txt2 {
-  0%,
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes txt2 {
+//   0%,
+//   80% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

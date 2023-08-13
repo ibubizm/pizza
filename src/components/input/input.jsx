@@ -8,6 +8,7 @@ import { AiOutlineUnlock, AiOutlinePhone, AiOutlineUser } from 'react-icons/ai'
 import { CiPizza } from 'react-icons/ci'
 
 export const Input = ({
+  field,
   placeholder,
   icon,
   obj,
@@ -37,14 +38,37 @@ export const Input = ({
     }
   }
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-      {setIcon()}
-      <input
-        onChange={(e) => onChange({ ...obj, [fieldName]: e.target.value })}
-        className={`auth__input ${icon}`}
-        placeholder={placeholder}
-        {...props}
-      />
+    <div className="custom__input">
+      {field.isDirty && field.minLengthError && (
+        <label htmlFor={fieldName}>{field.minLengthMessage}</label>
+      )}
+      {field.isDirty && field.maxLengthError && (
+        <label htmlFor={fieldName}>{field.maxLengthMessage}</label>
+      )}
+      {field.isDirty && field.emailError && (
+        <label htmlFor={fieldName}>{field.emailErrorMessage}</label>
+      )}
+      {field.isDirty && field.isEmpty && (
+        <label htmlFor={fieldName}>{field.isEmptyMessage}</label>
+      )}
+      {field.isDirty && field.phoneError && (
+        <label htmlFor={fieldName}>{field.phoneErrorMessage}</label>
+      )}
+
+      {console.log(field)}
+
+      <span>
+        {setIcon()}
+        <input
+          id={fieldName}
+          onChange={(e) => field.onChange(e)}
+          // onChange={(e) => onChange({ ...obj, [fieldName]: e.target.value })}
+          className={`auth__input ${icon}`}
+          placeholder={placeholder}
+          onBlur={(e) => field.onBlur(e)}
+          {...props}
+        />
+      </span>
     </div>
   )
 }

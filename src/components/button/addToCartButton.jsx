@@ -9,7 +9,7 @@ export const AddToCartButton = ({ isClicked, ...props }) => {
       {...props}
     >
       <span className={'add__to__cart'}>add</span>
-      <span className="added">added</span>
+      {/* <span className="added">added</span> */}
       <HiShoppingCart className="fa-shopping-cart" />
       <GiCardboardBoxClosed className="fa-box" />
     </span>

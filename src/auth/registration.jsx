@@ -1,71 +1,106 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../components/button/button'
 import { Input } from '../components/input/input'
 import './auth.scss'
 import { registration } from './fetch'
 import { useHistory } from 'react-router-dom'
+import { useInput } from '../hooks/form'
 
 export const Registration = () => {
+  const [disButton, setDisButton] = useState(true)
   const history = useHistory()
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-    phoneNumber: '',
-    avatar: '',
+  const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
+  const name = useInput('', { isEmpty: true, minLength: 2 })
+  const password = useInput('', { isEmpty: true, minLength: 3 })
+  const phone = useInput('', {
+    isEmpty: true,
+    minLength: 7,
+    isPhone: true,
+    maxLength: 7,
   })
+
+  // const [user, setUser] = useState({
+  //   name: '',
+  //   email: '',
+  //   password: '',
+  //   phoneNumber: '',
+  //   avatar: '',
+  // })
+
   const [ava, setAva] = useState('')
+
+  const disableButton = () => {
+    if (
+      name.inputValue &&
+      email.inputValue &&
+      password.inputValue &&
+      phone.inputValue
+    ) {
+      console.log('dis')
+      setDisButton(true)
+    } else setDisButton(false)
+  }
+
+  useEffect(() => {
+    // console.log(
+    //   name.inputValue,
+    //   email.inputValue,
+    //   password.inputValue,
+    //   phone.inputValue
+    // )
+    // console.log('as')
+    disableButton()
+  }, [name, email, password, phone])
 
   const submitForm = (e) => {
     e.preventDefault()
     const formData = new FormData()
-    formData.append('name', user.name)
-    formData.append('email', user.email)
-    formData.append('password', user.password)
-    formData.append('avatar', user.avatar)
-    formData.append('phoneNumber', user.phoneNumber)
+    formData.append('name', name.value)
+    formData.append('email', email.value)
+    formData.append('password', password.value)
+    formData.append('avatar', ava)
+    formData.append('phoneNumber', phone.value)
     registration(formData)
     history.push('/login')
   }
 
   const imgControl = (e) => {
-    setUser({ ...user, avatar: e.target.files[0] })
-    setAva(URL.createObjectURL(e.target.files[0]))
+    setAva(e.target.files[0])
   }
   return (
     <div className="wrapper">
       <div className="form__content">
-        {ava ? <img src={ava} alt="" /> : ''}
+        {ava ? <img src={URL.createObjectURL(ava)} alt="" /> : ''}
         <h1 className="form__title">registration</h1>
         <form onSubmit={submitForm}>
           <Input
             icon="name"
-            obj={user}
-            onChange={setUser}
+            field={name}
+            value={name.value}
             type="text"
             fieldName={'name'}
             placeholder={'name'}
           />
           <Input
             icon="email"
-            obj={user}
-            onChange={setUser}
+            field={email}
+            value={email.value}
             type="email"
             fieldName={'email'}
             placeholder={'email'}
           />
           <Input
             icon="lock"
-            obj={user}
-            onChange={setUser}
+            field={password}
+            value={password.value}
             type="password"
             fieldName={'password'}
             placeholder={'password'}
           />
           <Input
             icon="phone"
-            obj={user}
-            onChange={setUser}
+            field={phone}
+            value={phone.value}
             type="text"
             fieldName={'phoneNumber'}
             placeholder={'phoneNumber'}
@@ -76,7 +111,9 @@ export const Registration = () => {
             accept="image/*, .png, .jpg"
             name="file"
           />
-          <Button className="registration__btn">registration</Button>
+          <Button disabled={disButton} className="registration__btn">
+            registration
+          </Button>
         </form>
       </div>
     </div>

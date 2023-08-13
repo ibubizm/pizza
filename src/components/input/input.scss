@@ -17,3 +17,15 @@
 .auth__input__gap {
   margin-bottom: 20px;
 }
+.custom__input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  span {
+    display: flex;
+    align-items: center;
+  }
+  label {
+    color: red;
+  }
+}

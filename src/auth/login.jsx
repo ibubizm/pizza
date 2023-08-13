@@ -5,20 +5,19 @@ import './auth.scss'
 import { login } from './fetch'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { useInput } from '../hooks/form'
 
 export const Login = () => {
   const history = useHistory()
 
-  const [user, setUser] = useState({
-    email: '',
-    password: '',
-  })
+  const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
+  const password = useInput('', { isEmpty: true, minLength: 3 })
 
   const dispatch = useDispatch()
 
   const submitForm = (e) => {
     e.preventDefault()
-    dispatch(login(user))
+    dispatch(login(email.value, password.value))
     history.push('/')
   }
 
@@ -29,21 +28,28 @@ export const Login = () => {
         <form onSubmit={submitForm}>
           <Input
             icon="email"
-            obj={user}
-            onChange={setUser}
+            field={email}
             type="email"
             fieldName={'email'}
             placeholder={'email'}
+            onBlur={(e) => email.onBlur(e)}
+            value={email.value}
           />
           <Input
             icon="lock"
-            obj={user}
-            onChange={setUser}
+            field={password}
+            value={password.value}
+            onBlur={(e) => password.onBlur(e)}
             type="password"
             fieldName={'password'}
             placeholder={'password'}
           />
-          <Button className="registration__btn">login</Button>
+          <Button
+            // disabled={!email.inputValid && !password.inputValid}
+            className="registration__btn"
+          >
+            login
+          </Button>
         </form>
       </div>
     </div>

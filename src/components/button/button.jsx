@@ -1,8 +1,8 @@
 import './button.scss'
 
-export const Button = ({ children, ...props }) => {
+export const Button = ({ children, disabled, ...props }) => {
   return (
-    <button className="registration__btn" {...props}>
+    <button disabled={!disabled} className="registration__btn" {...props}>
       {children}
     </button>
   )
