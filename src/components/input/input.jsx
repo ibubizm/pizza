@@ -54,9 +54,6 @@ export const Input = ({
       {field.isDirty && field.phoneError && (
         <label htmlFor={fieldName}>{field.phoneErrorMessage}</label>
       )}
-
-      {console.log(field)}
-
       <span>
         {setIcon()}
         <input

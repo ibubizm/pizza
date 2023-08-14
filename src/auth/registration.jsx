@@ -8,6 +8,7 @@ import { useInput } from '../hooks/form'
 
 export const Registration = () => {
   const [disButton, setDisButton] = useState(true)
+  const [message, setMessage] = useState('')
   const history = useHistory()
   const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
   const name = useInput('', { isEmpty: true, minLength: 2 })
@@ -36,19 +37,11 @@ export const Registration = () => {
       password.inputValue &&
       phone.inputValue
     ) {
-      console.log('dis')
       setDisButton(true)
     } else setDisButton(false)
   }
 
   useEffect(() => {
-    // console.log(
-    //   name.inputValue,
-    //   email.inputValue,
-    //   password.inputValue,
-    //   phone.inputValue
-    // )
-    // console.log('as')
     disableButton()
   }, [name, email, password, phone])
 
@@ -60,8 +53,8 @@ export const Registration = () => {
     formData.append('password', password.value)
     formData.append('avatar', ava)
     formData.append('phoneNumber', phone.value)
-    registration(formData)
-    history.push('/login')
+    registration(formData).then(({ data }) => setMessage(data.message))
+    // history.push('/login')
   }
 
   const imgControl = (e) => {
@@ -70,6 +63,7 @@ export const Registration = () => {
   return (
     <div className="wrapper">
       <div className="form__content">
+        {message && <span>{message}</span>}
         {ava ? <img src={URL.createObjectURL(ava)} alt="" /> : ''}
         <h1 className="form__title">registration</h1>
         <form onSubmit={submitForm}>

@@ -4,13 +4,14 @@ import { server_url } from '../vars'
 
 export const registration = async (forma) => {
   try {
-    await axios.post(server_url + 'auth/registration', forma, {
+    const res = await axios.post(server_url + 'auth/registration', forma, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     })
+    return res
   } catch (e) {
-    console.log(e)
+    return e.response
   }
 }
 
@@ -24,8 +25,9 @@ export const login = (email, password) => {
       localStorage.setItem('token', res.data.token)
 
       dispatch(setUser(res.data.user))
+      return res
     } catch (e) {
-      return e.request.status
+      return e.response
     }
   }
 }

@@ -12,8 +12,12 @@ import {
   drinkSize,
 } from './props'
 import { useHistory } from 'react-router-dom'
+import { useInput } from '../hooks/form'
 
 export const Admin = () => {
+  const [disButton, setDisButton] = useState(true)
+  const name = useInput('', { isEmpty: true, minLength: 2 })
+  const imageUrl = useInput('', { isEmpty: true })
   const [product, setProduct] = useState(defaultProduct)
   const [toppings, setToppings] = useState(sizesList)
   const [drink, setDrink] = useState(drinkSize)
@@ -109,8 +113,8 @@ export const Admin = () => {
     e.preventDefault()
     const [sizes, types, price] = checkCategory()
     const form = new FormData()
-    form.append('imageUrl', product.imageUrl)
-    form.append('name', product.name)
+    form.append('imageUrl', imageUrl.value)
+    form.append('name', name.value)
     form.append('types', types)
     form.append('sizes', sizes)
     form.append('price', price)
@@ -127,16 +131,20 @@ export const Admin = () => {
       <div className="form__content">
         <form onSubmit={onSubmit}>
           <Input
+            field={imageUrl}
+            value={imageUrl.value}
             fieldName={'imageUrl'}
-            obj={product}
-            onChange={setProduct}
+            // obj={product}
+            // onChange={setProduct}
             placeholder={'url image'}
             icon={'image'}
           />
           <Input
+            field={name}
+            value={name.value}
             fieldName={'name'}
-            obj={product}
-            onChange={setProduct}
+            // obj={product}
+            // onChange={setProduct}
             placeholder={'name of product'}
             icon={'pizza'}
           />
@@ -174,7 +182,9 @@ export const Admin = () => {
             }
           />
 
-          <Button className="registration__btn">create product</Button>
+          <Button disabled={disButton} className="registration__btn">
+            create product
+          </Button>
         </form>
       </div>
     </div>

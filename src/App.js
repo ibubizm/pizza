@@ -7,6 +7,7 @@ import { auth } from './auth/fetch'
 import { savedProduct } from './redux/actions/cart'
 import { privatRoutes, publicRoutes } from './routes'
 import { Admin } from './adminPage/Admin'
+import PizzaList from './pizzalist/pizzalist'
 
 function App() {
   const dispatch = useDispatch()
