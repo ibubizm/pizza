@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { addObjToCart } from '../redux/actions/cart'
-import { Button } from '../components/button/button'
 import { getOneProduct } from '../auth/fetch'
 import { AddToCartButton } from '../components/button/addToCartButton'
+import { Select } from '../components/select/select'
 
 export const ProductDetail = () => {
   const { id } = useParams()
@@ -48,8 +48,10 @@ export const ProductDetail = () => {
   }
 
   const toggleSize = (e) => {
-    setCurrentSizeValue(e.target.value)
-    setCurrentPriceValue(piz.price[piz.sizes.indexOf(+e.target.value)])
+    setCurrentSizeValue(e)
+    // setCurrentSizeValue(e.target.value)
+    // setCurrentPriceValue(piz.price[piz.sizes.indexOf(+e.target.value)])
+    setCurrentPriceValue(piz.price[piz.sizes.indexOf(e)])
   }
 
   const handleClick = () => {
@@ -70,7 +72,7 @@ export const ProductDetail = () => {
             <h2>{piz.name}</h2>
             <p>{piz.description}</p>
             <div className="detail__page__options">
-              <select
+              {/* <select
                 value={currentSizeValue}
                 onChange={toggleSize}
                 name="size"
@@ -80,25 +82,36 @@ export const ProductDetail = () => {
                     {i}
                   </option>
                 ))}
-              </select>
+              </select> */}
+              <Select
+                name={'ass'}
+                options={piz.sizes}
+                selected={currentSizeValue}
+                setSelected={toggleSize}
+              />
               {piz.types.length !== 0 && (
-                <select
-                  value={currentDoughValue}
-                  onChange={(e) => {
-                    setCurrentDoughValue(e.target.value)
-                  }}
-                  name="dough"
-                >
-                  {piz.types.map((i) => (
-                    <option key={i} value={i}>
-                      {i}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  name={'dough'}
+                  options={piz.types}
+                  selected={currentDoughValue}
+                  setSelected={setCurrentDoughValue}
+                />
+                // <select
+                //   value={currentDoughValue}
+                //   onChange={(e) => {
+                //     setCurrentDoughValue(e.target.value)
+                //   }}
+                //   name="dough"
+                // >
+                //   {piz.types.map((i) => (
+                //     <option key={i} value={i}>
+                //       {i}
+                //     </option>
+                //   ))}
+                // </select>
               )}
               <span>{currentPriceValue}BYN</span>
               <AddToCartButton isClicked={isClicked} onClick={addToCart} />
-              {/* <Button onClick={addToCart}>add</Button> */}
             </div>
           </div>
         </div>

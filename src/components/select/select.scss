@@ -1,0 +1,56 @@
+@import '../../styles/vars.scss';
+
+.dropdown {
+  position: relative;
+  width: 100%;
+  // margin: 100px auto;
+  // margin: 10px;
+}
+
+.dropdown .select-btn {
+  cursor: pointer;
+  padding: 15px 20px;
+  background: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown .dropdown-content {
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  max-height: 110px;
+  overflow: scroll;
+  left: 0;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown .dropdown-content .dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+  transition: all 0.2s;
+  background: $blue;
+  color: #fff;
+}
+
+.triangle_down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #2f2f2f;
+  font-size: 0;
+  line-height: 0;
+  float: left;
+}

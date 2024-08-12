@@ -16,10 +16,13 @@
   }
 
   &__options {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto auto;
+    gap: 10px;
     text-align: center;
     align-items: center;
     justify-content: space-around;
+    margin: 20px 0 110px 0;
   }
 }
 

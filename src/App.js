@@ -7,7 +7,6 @@ import { auth } from './auth/fetch'
 import { savedProduct } from './redux/actions/cart'
 import { privatRoutes, publicRoutes } from './routes'
 import { Admin } from './adminPage/Admin'
-import PizzaList from './pizzalist/pizzalist'
 
 function App() {
   const dispatch = useDispatch()
@@ -26,14 +25,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {publicRoutes.map((route) => (
-        <Route
-          key={route.path}
-          path={route.path}
-          component={route.component}
-          {...route}
-        />
-      ))}
       {isAuth &&
         privatRoutes.map((route) => (
           <Route
@@ -45,6 +36,14 @@ function App() {
       {isAuth && currentUser.status && (
         <Route path={'/admin'} component={Admin} />
       )}
+      {publicRoutes.map((route) => (
+        <Route
+          key={route.path}
+          path={route.path}
+          component={route.component}
+          {...route}
+        />
+      ))}
     </div>
   )
 }
